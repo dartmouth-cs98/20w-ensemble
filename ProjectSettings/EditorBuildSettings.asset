@@ -15,9 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScreen.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+<<<<<<< HEAD
+=======
+    path: Assets/Scenes/Backstage.unity
+    guid: 305b4173ee362453893b90cf3d535a62
+  - enabled: 0
+>>>>>>> 0518c192a6cfaf990dd55718f8f7f75321b38259
     path: Assets/Scenes/MainStage.unity
     guid: 89656a9a885ba41ee8e72e390a912db7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EndingScene.unity
     guid: efee26a1296894d09a44af1d289a475e
   m_configObjects: {}
