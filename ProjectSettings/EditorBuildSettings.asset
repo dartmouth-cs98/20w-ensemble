@@ -8,19 +8,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/GearVrControllerTest.unity
     guid: d56af3aeb2176e7459f753c1c2e2dd97
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/StartScreen.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
     path: Assets/Scenes/Backstage.unity
     guid: 305b4173ee362453893b90cf3d535a62
   - enabled: 0
-    path: Assets/Scenes/MainStage.unity
-    guid: 89656a9a885ba41ee8e72e390a912db7
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Scenes/EndingScene.unity
     guid: efee26a1296894d09a44af1d289a475e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UIDesign.unity
     guid: ead566f48748a49999644e97adf603f5
   m_configObjects: {}
