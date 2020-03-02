@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class Muter : MonoBehaviour
 {
+    // ;
+    // void start(){
+    //     audioSource = GetComponent<AudioSource>();
+    // }
+    
+
     // Update is called once per frame
-    void muteUnmute(AudioSource audio)
+    public void muteUnmute(AudioSource audioSource)
     {
-        audio.mute=!audio.mute;
+        //audioSource = GetComponent<AudioSource>();
+        audioSource.mute=!audioSource.mute;
     }
 }
