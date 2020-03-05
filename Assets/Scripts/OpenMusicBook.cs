@@ -13,9 +13,12 @@ public class OpenMusicBook : MonoBehaviour
     int rightPage = -1;
 
     GameManager gm;
+    GameObject gmObject;
     // Start is called before the first frame update
     void Start()
     {
+        //gmObject = GameObject.Find("GameManager");
+        //gm = gmObject.GetComponent<GameManager>();
         gm = UnityEngine.Object.FindObjectOfType<GameManager>();
         pages = new List<GameObject>();
         foreach (Transform child in transform){
@@ -45,7 +48,7 @@ public class OpenMusicBook : MonoBehaviour
     }
 
     public void turnLeftPage() {
-        chalkboardText.text = "No music selected.";
+        //chalkboardText.text = "No music selected.";
         if(leftPage != -1) {
             pages[leftPage].GetComponent<MusicPage>().turnLeft();
 
