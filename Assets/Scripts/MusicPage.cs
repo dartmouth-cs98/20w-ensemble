@@ -16,7 +16,7 @@ public class MusicPage : MonoBehaviour
 	// Start is called before the first frame update
     void Start()
     {
-        targetAngle = (0f + (float)(1-pageID)*1f)*Vector3.forward;
+        targetAngle = (0f + (float)(2-pageID)*1f)*Vector3.forward;
     }
 
 	// Update is called once per frame
@@ -32,7 +32,7 @@ public class MusicPage : MonoBehaviour
 	}
 
 	public void turnLeft() {
-		targetAngle = (0f + (float)(1-pageID)*1f)*Vector3.forward;
+		targetAngle = (0f + (float)(2-pageID)*1f)*Vector3.forward;
 	}
 
     
