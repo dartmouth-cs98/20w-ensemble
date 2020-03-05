@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class Muter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
-    void Update()
+    void muteUnmute(AudioSource audio)
     {
-        
+        audio.mute=!audio.mute;
     }
 }
