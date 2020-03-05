@@ -14,4 +14,8 @@ public class SceneSwitcher : MonoBehaviour
     public void moveBackStage(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-2);
     }
+
+    public void goToFrontStage() {
+    	SceneManager.LoadScene(2);
+    }
 }

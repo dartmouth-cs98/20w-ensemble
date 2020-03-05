@@ -12,9 +12,11 @@ public class OpenMusicBook : MonoBehaviour
     int leftPage = -1;
     int rightPage = -1;
 
+    GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
+        gm = UnityEngine.Object.FindObjectOfType<GameManager>();
         pages = new List<GameObject>();
         foreach (Transform child in transform){
             pages.Add(child.gameObject);
@@ -33,6 +35,7 @@ public class OpenMusicBook : MonoBehaviour
 
             leftPage = rightPage;
             chalkboardText.text = pages[leftPage].GetComponent<MusicPage>().pageName;
+            gm.songID = leftPage;
             if(rightPage < pages.Count) {
                 rightPage++;
             } else {
@@ -49,8 +52,12 @@ public class OpenMusicBook : MonoBehaviour
             if(leftPage > 0) {
                 leftPage--;
                 chalkboardText.text = pages[leftPage].GetComponent<MusicPage>().pageName;
+                gm.songID = leftPage;
+
             } else {
                 leftPage = -1;
+                gm.songID = -1;
+
                 chalkboardText.text = "No music selected!";
             }
 
