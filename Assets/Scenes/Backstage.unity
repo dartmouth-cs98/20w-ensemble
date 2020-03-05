@@ -230,6 +230,11 @@ PrefabInstance:
       propertyPath: pageName
       value: Let It Go
       objectReference: {fileID: 0}
+    - target: {fileID: 2812158140048858761, guid: c439f996e5741413fbe4737a71ea9c40,
+        type: 3}
+      propertyPath: smooth
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 4490321109644757347, guid: c439f996e5741413fbe4737a71ea9c40,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2170,6 +2175,11 @@ PrefabInstance:
         type: 3}
       propertyPath: pageName
       value: N/A
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812158140048858761, guid: c439f996e5741413fbe4737a71ea9c40,
+        type: 3}
+      propertyPath: smooth
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4490321109644757347, guid: c439f996e5741413fbe4737a71ea9c40,
         type: 3}
@@ -5582,6 +5592,11 @@ PrefabInstance:
         type: 3}
       propertyPath: pageName
       value: Pachelbel's Canon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812158140048858761, guid: c439f996e5741413fbe4737a71ea9c40,
+        type: 3}
+      propertyPath: smooth
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4490321109644757347, guid: c439f996e5741413fbe4737a71ea9c40,
         type: 3}
