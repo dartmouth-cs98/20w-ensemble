@@ -2329,8 +2329,8 @@ MonoBehaviour:
   _proximityZone: {fileID: 1080881414}
   _contactZone: {fileID: 76708737}
   _actionZone: {fileID: 249780131}
-  _contactTests: 
-  _buttonPlaneCenter: {fileID: 0}
+  _contactTests: 0000000001000000
+  _buttonPlaneCenter: {fileID: 1600570255}
   _makeSureToolIsOnPositiveSide: 1
   _localButtonDirection: {x: 0, y: -1, z: 0}
   _allValidToolsTags: 01000000
