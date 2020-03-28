@@ -86,124 +86,122 @@ public class ChordProgression : MonoBehaviour
     //For diff tones, use ratio of frequencies (desired/current) as the input for the pitch shifter
     public void Play()
     {
-      for(int i = 0; i < measures; i++)
+      float freq = Root;
+      float target = 0f;
+      float ratio = 0f;
+      float third = 0f;
+      float fifth = 0f;
+      float seventh = 0f;
+      int map = 0;
+      int j = 0;
+
+      if(notes[keys[j].value] + accs[accidentals[j].value] == "CNatural" ||
+      notes[keys[j].value] + accs[accidentals[j].value] == "BSharp")
       {
-        for(int j = 0; j < sigNum; j++)
-        {
-          float freq = Root;
-          float target = 0f;
-          float ratio = 0f;
-          float third = 0f;
-          float fifth = 0f;
-          float seventh = 0f;
-          int map = 0;
-
-          if(notes[keys[j].value] + accs[accidentals[j].value] == "CNatural")
-          {
-            target = noteFreq["C"]/freq;
-            map = 0;
-          }else if(notes[keys[j].value] + accs[accidentals[j].value] == "CSharp")
-          {
-            target = noteFreq["CSharp"]/freq;
-            map = 1;
-          }else if(notes[keys[j].value] + accs[accidentals[j].value] == "DNatural")
-          {
-            target = noteFreq["D"]/freq;
-            map = 2;
-          }else if(notes[keys[j].value] + accs[accidentals[j].value] == "DSharp")
-          {
-            target = noteFreq["DSharp"]/freq;
-            map = 3;
-          }else if(notes[keys[j].value] + accs[accidentals[j].value] == "ENatural")
-          {
-            target = noteFreq["E"]/freq;
-            map = 4;
-          }else if(notes[keys[j].value] + accs[accidentals[j].value] == "FNatural")
-          {
-            target = noteFreq["F"]/freq;
-            map = 5;
-          }else if(notes[keys[j].value] + accs[accidentals[j].value] == "FSharp")
-          {
-            target = noteFreq["FSharp"]/freq;
-            map = 6;
-          }else if(notes[keys[j].value] + accs[accidentals[j].value] == "GNatural")
-          {
-            target = noteFreq["G"]/freq;
-          }else if(notes[keys[j].value] + accs[accidentals[j].value] == "GSharp")
-          {
-            target = noteFreq["GSharp"]/freq;
-            map = 7;
-          }else if(notes[keys[j].value] + accs[accidentals[j].value] == "ANatural")
-          {
-            target = noteFreq["A"]/freq;
-            map = 8;
-          }else if(notes[keys[j].value] + accs[accidentals[j].value] == "ASharp")
-          {
-            target = noteFreq["ASharp"]/freq;
-            map = 9;
-          }else if(notes[keys[j].value] + accs[accidentals[j].value] == "BNatural")
-          {
-            target = noteFreq["B"]/freq;
-            map = 10;
-          }else if(notes[keys[j].value] + accs[accidentals[j].value] == "BSharp")
-          {
-            target = noteFreq["BSharp"]/freq;
-            map = 11;
-          }
-
-          if(chordQualities[qualities[j].value] == "Maj")
-          {
-            third = noteFreq[noteMap[(map + 4) % 12]]/freq;
-            fifth = noteFreq[noteMap[(map + 7) % 12]]/freq;
-            seventh = noteFreq[noteMap[(map + 12) % 12]]/freq;
-          }else if(chordQualities[qualities[j].value] == "min")
-          {
-            third = noteFreq[noteMap[(map + 3) % 12]]/freq;
-            fifth = noteFreq[noteMap[(map + 7) % 12]]/freq;
-            seventh = noteFreq[noteMap[(map + 12) % 12]]/freq;
-          }else if(chordQualities[qualities[j].value] == "MM7")
-          {
-            third = noteFreq[noteMap[(map + 4) % 12]]/freq;
-            fifth = noteFreq[noteMap[(map + 7) % 12]]/freq;
-            seventh = noteFreq[noteMap[(map + 11) % 12]]/freq;
-          }else if(chordQualities[qualities[j].value] == "mm7")
-          {
-            third = noteFreq[noteMap[(map + 3) % 12]]/freq;
-            fifth = noteFreq[noteMap[(map + 7) % 12]]/freq;
-            seventh = noteFreq[noteMap[(map + 10) % 12]]/freq;
-          }else if(chordQualities[qualities[j].value] == "7")
-          {
-            third = noteFreq[noteMap[(map + 4) % 12]]/freq;
-            fifth = noteFreq[noteMap[(map + 7) % 12]]/freq;
-            seventh = noteFreq[noteMap[(map + 10) % 12]]/freq;
-          }else if(chordQualities[qualities[j].value] == "dim7")
-          {
-            third = noteFreq[noteMap[(map + 3) % 12]]/freq;
-            fifth = noteFreq[noteMap[(map + 6) % 12]]/freq;
-            seventh = noteFreq[noteMap[(map + 9) % 12]]/freq;
-          }else if(chordQualities[qualities[j].value] == "halfDim7")
-          {
-            third = noteFreq[noteMap[(map + 3) % 12]]/freq;
-            fifth = noteFreq[noteMap[(map + 6) % 12]]/freq;
-            seventh = noteFreq[noteMap[(map + 10) % 12]]/freq;
-          }
-          pianoRoot.SetFloat(pitch, target);
-          pianoThird.SetFloat(pitch, third);
-          pianoFifth.SetFloat(pitch, fifth);
-          pianoSeventh.SetFloat(pitch, seventh);
-          pianoR.time = 0f;
-          pianoR.Play();
-          pianoT.Play();
-          pianoF.Play();
-          pianoS.Play();/*
-          if(pianoR.time > 60/tempo) {
-            pianoR.Stop();
-            pianoT.Stop();
-            pianoF.Stop();
-            pianoS.Stop();
-          }*/
-
-        }
+        target = noteFreq["C"]/freq;
+        map = 0;
+      }else if(notes[keys[j].value] + accs[accidentals[j].value] == "CSharp" ||
+      notes[keys[j].value] + accs[accidentals[j].value] == "DFlat")
+      {
+        target = noteFreq["CSharp"]/freq;
+        map = 1;
+      }else if(notes[keys[j].value] + accs[accidentals[j].value] == "DNatural")
+      {
+        target = noteFreq["D"]/freq;
+        map = 2;
+      }else if(notes[keys[j].value] + accs[accidentals[j].value] == "DSharp" ||
+      notes[keys[j].value] + accs[accidentals[j].value] == "EFlat")
+      {
+        target = noteFreq["DSharp"]/freq;
+        map = 3;
+      }else if(notes[keys[j].value] + accs[accidentals[j].value] == "ENatural" ||
+      notes[keys[j].value] + accs[accidentals[j].value] == "FFlat")
+      {
+        target = noteFreq["E"]/freq;
+        map = 4;
+      }else if(notes[keys[j].value] + accs[accidentals[j].value] == "FNatural" ||
+      notes[keys[j].value] + accs[accidentals[j].value] == "ESharp")
+      {
+        target = noteFreq["F"]/freq;
+        map = 5;
+      }else if(notes[keys[j].value] + accs[accidentals[j].value] == "FSharp" ||
+      notes[keys[j].value] + accs[accidentals[j].value] == "GFlat")
+      {
+        target = noteFreq["FSharp"]/freq;
+        map = 6;
+      }else if(notes[keys[j].value] + accs[accidentals[j].value] == "GNatural")
+      {
+        target = noteFreq["G"]/freq;
+        map = 7;
+      }else if(notes[keys[j].value] + accs[accidentals[j].value] == "GSharp" ||
+      notes[keys[j].value] + accs[accidentals[j].value] == "AFlat")
+      {
+        target = noteFreq["GSharp"]/freq;
+        map = 8;
+      }else if(notes[keys[j].value] + accs[accidentals[j].value] == "ANatural")
+      {
+        target = noteFreq["A"]/freq;
+        map = 9;
+      }else if(notes[keys[j].value] + accs[accidentals[j].value] == "ASharp" ||
+      notes[keys[j].value] + accs[accidentals[j].value] == "BFlat")
+      {
+        target = noteFreq["ASharp"]/freq;
+        map = 10;
+      }else if(notes[keys[j].value] + accs[accidentals[j].value] == "BNatural" ||
+      notes[keys[j].value] + accs[accidentals[j].value] == "CFlat")
+      {
+        target = noteFreq["B"]/freq;
+        map = 11;
       }
+
+      if(chordQualities[qualities[j].value] == "Maj")
+      {
+        third = noteFreq[noteMap[(map + 4) % 12]]/freq;
+        fifth = noteFreq[noteMap[(map + 7) % 12]]/freq;
+        seventh = noteFreq[noteMap[map]]/freq;
+      }else if(chordQualities[qualities[j].value] == "min")
+      {
+        third = noteFreq[noteMap[(map + 3) % 12]]/freq;
+        fifth = noteFreq[noteMap[(map + 7) % 12]]/freq;
+        seventh = noteFreq[noteMap[map]]/freq;
+      }else if(chordQualities[qualities[j].value] == "MM7")
+      {
+        third = noteFreq[noteMap[(map + 4) % 12]]/freq;
+        fifth = noteFreq[noteMap[(map + 7) % 12]]/freq;
+        seventh = noteFreq[noteMap[(map + 11) % 12]]/freq;
+      }else if(chordQualities[qualities[j].value] == "mm7")
+      {
+        third = noteFreq[noteMap[(map + 3) % 12]]/freq;
+        fifth = noteFreq[noteMap[(map + 7) % 12]]/freq;
+        seventh = noteFreq[noteMap[(map + 10) % 12]]/freq;
+      }else if(chordQualities[qualities[j].value] == "7")
+      {
+        third = noteFreq[noteMap[(map + 4) % 12]]/freq;
+        fifth = noteFreq[noteMap[(map + 7) % 12]]/freq;
+        seventh = noteFreq[noteMap[(map + 10) % 12]]/freq;
+      }else if(chordQualities[qualities[j].value] == "dim7")
+      {
+        third = noteFreq[noteMap[(map + 3) % 12]]/freq;
+        fifth = noteFreq[noteMap[(map + 6) % 12]]/freq;
+        seventh = noteFreq[noteMap[(map + 9) % 12]]/freq;
+      }else if(chordQualities[qualities[j].value] == "halfDim7")
+      {
+        third = noteFreq[noteMap[(map + 3) % 12]]/freq;
+        fifth = noteFreq[noteMap[(map + 6) % 12]]/freq;
+        seventh = noteFreq[noteMap[(map + 10) % 12]]/freq;
+      }
+      pianoRoot.SetFloat(pitch, target);
+      pianoThird.SetFloat(pitch, third);
+      pianoFifth.SetFloat(pitch, fifth);
+      pianoSeventh.SetFloat(pitch, seventh);
+      pianoR.Play();
+      pianoT.Play();
+      pianoF.Play();
+      pianoS.Play();
+    }
+    IEnumerator Wait()
+    {
+      float sec = 1f;
+      yield return new WaitForSeconds(sec);
     }
 }
