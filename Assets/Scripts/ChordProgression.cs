@@ -17,7 +17,7 @@ public class ChordProgression : MonoBehaviour
     public AudioMixer pianoSeventh;
     public AudioMixer bassline;
     public string pitch = "PitchOffset";
-    public int tempo;
+    public Slider tempo;
     public int sigNum;
     public int sigDen;
     public int measures;
@@ -94,7 +94,6 @@ public class ChordProgression : MonoBehaviour
       float seventh = 0f;
       int map = 0;
       int j = 0;
-
       if(notes[keys[j].value] + accs[accidentals[j].value] == "CNatural" ||
       notes[keys[j].value] + accs[accidentals[j].value] == "BSharp")
       {
@@ -194,14 +193,20 @@ public class ChordProgression : MonoBehaviour
       pianoThird.SetFloat(pitch, third);
       pianoFifth.SetFloat(pitch, fifth);
       pianoSeventh.SetFloat(pitch, seventh);
+      StartCoroutine(Wait());
+    }
+    IEnumerator Wait()
+    {
       pianoR.Play();
       pianoT.Play();
       pianoF.Play();
       pianoS.Play();
-    }
-    IEnumerator Wait()
-    {
-      float sec = 1f;
+      float sec = 60/tempo.value * 1.0f;
       yield return new WaitForSeconds(sec);
+      pianoR.Stop();
+      pianoT.Stop();
+      pianoF.Stop();
+      pianoS.Stop();
+      pianoR.Play();
     }
 }
