@@ -3,7 +3,22 @@ guid: 72a4830f548ea4347902a902c0625d4e
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Matte_black
+    second: {fileID: 2100000, guid: 9fd7c2ba13b254bb39ff31f50fb803fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pitch_black
+    second: {fileID: 2100000, guid: 9fd7c2ba13b254bb39ff31f50fb803fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Scroll
+    second: {fileID: 2100000, guid: 9fd7c2ba13b254bb39ff31f50fb803fb, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

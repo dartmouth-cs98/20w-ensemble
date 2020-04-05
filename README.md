@@ -16,8 +16,17 @@
 
 ## Deployment
 
-* Clone this repository into any folder. Then, open the project in Unity! An Oculus Quest is required to run the application, so plug in an Oculus Quest into your computer via USB cable. Enable USB debugging on the Oculus Quest. Open the companion Python app as well.
+* Clone this repository into any folder. Then, open the project in Unity! An Oculus Quest is required to run the application, so plug in an Oculus Quest into your computer via USB cable. Enable USB debugging on the Oculus Quest.
 * Go to Build Settings, and ensure that it is building to Android. Go to player settings and ensure that Quest is set as the build target. Then, click Build and Run, save the .apk into any folder you would like, and enjoy!
+
+## How to Navigate the Game
+* Once the game is started, point the ray shooting out of your right hand at the "Play" button and pinch your index fingerand thumb together.
+* Touch the corners of the music book in front of you to select pieces. The piece will display on the white board straight ahead.
+* Turn right, point the ray at the brown tile in front of the door, and pinch again to move.
+* Touch the doorknob with your index finger to move frontstage.
+* Point the ray at the conductor and pinch again to start the music.
+* There are several UI elements in the scene to interact with using the ray and pinch tools.
+* Enjoy!
 
 ## Authors
 
