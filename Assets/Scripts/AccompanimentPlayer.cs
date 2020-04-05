@@ -11,10 +11,6 @@ public class AccompanimentPlayer : MonoBehaviour
     {
       {"violin", 0},
       {"cello", 1},
-      {"bass", 2},
-      {"flute", 3},
-      {"trumpet", 4},
-      {"viola", 5},
     };
 
     public void PlayNote(int midi, float duration, string instrument)
