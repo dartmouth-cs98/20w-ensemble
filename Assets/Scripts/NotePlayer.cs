@@ -149,7 +149,7 @@ public class NotePlayer : MonoBehaviour
       float ratio = 1f;
       instrument.clip = FindCloseRoot(midi);
       string name = instrument.clip.name;
-      string rootValue = name.Substring(name.Length - 4);
+      string rootValue = name.Substring(name.Length - 3);
       int rootVal = 0;
       if(Int32.TryParse(rootValue, out rootVal))
       {
@@ -164,7 +164,7 @@ public class NotePlayer : MonoBehaviour
       AudioClip closeClip = clips[0];
       foreach(AudioClip clip in clips)
       {
-        string rootValue = clip.name.Substring(clip.name.Length - 4);
+        string rootValue = clip.name.Substring(clip.name.Length - 3);
         int rootVal = 0;
         if(Int32.TryParse(rootValue, out rootVal))
         {

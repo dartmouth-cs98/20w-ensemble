@@ -202,12 +202,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 457267494}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 0}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 8300000, guid: 5241b9ab2096e492a8c21338786d6206,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -293,54 +294,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &818265423
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 818265424}
-  - component: {fileID: 818265425}
-  m_Layer: 0
-  m_Name: TempoChangeController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &818265424
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818265423}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &818265425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818265423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 649a8bd964cc4443081e3034c5a98846, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  master: {fileID: 24100000, guid: 0713440a5760d46ca84b4b89373a36ba, type: 2}
-  tempo: Tempo
-  pitch: PitchOffset
 --- !u!1 &1090093739
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +327,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instrument: {fileID: 1315534034}
   mixer: {fileID: 24100000, guid: 00764ad1a9e6b497f990204630adc317, type: 2}
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: 394924a91f91a49cf80ae44991988c10, type: 3}
+  - {fileID: 8300000, guid: 3ce2c404e3c08408a8b2525c1d99abf8, type: 3}
+  - {fileID: 8300000, guid: 20c49262c7fb94c8a948d260bfba8706, type: 3}
+  - {fileID: 8300000, guid: a91a8ff20c3414e70b43eb6b4257360b, type: 3}
+  - {fileID: 8300000, guid: 54c7a2ac4b7264bb9a5ff97ff9cee744, type: 3}
   pitch: PitchOffset
 --- !u!4 &1090093741
 Transform:
@@ -386,7 +346,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1265369541
 GameObject:
@@ -883,7 +843,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instrument: {fileID: 1265369542}
   mixer: {fileID: 24100000, guid: d69af3a3b00974d40b6300f6f6c3e230, type: 2}
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: 7e78229683f6d4d879e43bd799cb9c38, type: 3}
+  - {fileID: 8300000, guid: b3264cdb3e78c4de9b86dd3f16966e1e, type: 3}
+  - {fileID: 8300000, guid: f8210b90b9803425abdc597dd2ebdcc3, type: 3}
+  - {fileID: 8300000, guid: b1e931279087747b8aed344ce852b288, type: 3}
+  - {fileID: 8300000, guid: 5ebbcd503a2134e1daeaa3a90d8b28fa, type: 3}
   pitch: PitchOffset
 --- !u!4 &1648078798
 Transform:
@@ -897,7 +862,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1663584855
 GameObject:
@@ -1054,7 +1019,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1964385462
 GameObject:
@@ -1148,7 +1113,7 @@ RectTransform:
   m_Children:
   - {fileID: 163414996}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
