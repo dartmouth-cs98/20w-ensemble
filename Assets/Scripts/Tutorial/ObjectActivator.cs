@@ -6,28 +6,8 @@ using UnityEngine.UI;
 
 public class ObjectActivator : MonoBehaviour
 {
-    public GameObject[] toActivate;
-    // IEnumerator Start()
-    // {
-    //     for (int i = 0; i < toActivate.Length; i++)
-    //     {
-    //         toActivate[i].SetActive(true);
-    //         yield return new WaitForSeconds(0);
-    //     }
-    // }
-    void Start()
+    public void activateObject(GameObject toActivate)
     {
-        for (int i = 0; i < toActivate.Length; i++)
-        {
-            toActivate[i].SetActive(true);
-        }
+        toActivate.SetActive(true);
     }
-
-    // void objectActivate()
-    // {
-    //     for (int i = 0; i < toActivate.Length; i++)
-    //     {
-    //         toActivate[i].SetActive(true);
-    //     }
-    // }
 }

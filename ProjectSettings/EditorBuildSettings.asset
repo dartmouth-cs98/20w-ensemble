@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Backstage.unity
     guid: 305b4173ee362453893b90cf3d535a62
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Frontstage.unity
     guid: 47ab2135fc61e4336a53ffacc1536a94
   - enabled: 0
