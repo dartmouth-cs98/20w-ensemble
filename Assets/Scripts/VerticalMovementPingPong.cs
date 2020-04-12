@@ -4,27 +4,23 @@ using UnityEngine;
 
 public class VerticalMovementPingPong : MonoBehaviour
 {
-    private float speed = .1f;
+    private float speed = .075f;
     private float min = 0f;
-    private float max = 0f;
+    private float displacement = 0f;
     private bool startmoving = false;
-
-    void Start()
-    {
-      min = transform.position.y;
-      max = transform.position.y + .5f;
-    }
 
     public void Initiate(float change)
     {
       startmoving = true;
-      max = transform.position.y + change;
+      min = transform.position.y;
+      displacement = change;
     }
+
     void Update()
     {
       if(startmoving)
       {
-        transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time*speed, max-min), transform.position.z);
+        transform.position = new Vector3(transform.position.x, min + Mathf.PingPong(Time.time*speed, displacement), transform.position.z);
       }
     }
 }

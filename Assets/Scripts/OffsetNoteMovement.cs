@@ -5,7 +5,6 @@ using UnityEngine;
 public class OffsetNoteMovement : MonoBehaviour
 {
     public VerticalMovementPingPong[] paths;
-    private int curr = 0;
     private bool alternate = true;
 
     void Start()
@@ -14,12 +13,12 @@ public class OffsetNoteMovement : MonoBehaviour
       {
         if(alternate)
         {
-          alternate = !alternate;
-          path.Initiate(Random.Range(0.25f, 0.5f));
+          alternate = false;
+          path.Initiate(Random.Range(0.1f, 0.3f));
         } else
         {
-          alternate = !alternate;
-          path.Initiate(Random.Range(-0.5f, -0.25f));
+          alternate = true;
+          path.Initiate(Random.Range(-0.3f, -0.1f));
         }
       }
     }
