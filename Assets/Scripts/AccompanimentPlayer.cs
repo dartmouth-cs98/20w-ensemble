@@ -10,11 +10,16 @@ public class AccompanimentPlayer : MonoBehaviour
     private Dictionary<string, int> instrumentMap = new Dictionary<string, int>()
     {
       {"violin", 0},
-      {"cello", 1},
+      {"cello", 1}
     };
 
-    public void PlayNote(int midi, float duration, string instrument)
+    public void NoteOn(int midi, float duration, string instrument)
     {
-      noteplayers[instrumentMap[instrument]].PlayNote(midi, duration);
+      noteplayers[instrumentMap[instrument]].NoteOn(midi);
+    }
+
+    public void NoteOff(string instrument)
+    {
+      noteplayers[instrumentMap[instrument]].NoteOff();
     }
 }
