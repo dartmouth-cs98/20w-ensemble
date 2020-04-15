@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour {
 
 	public int songID = -1;
 
+	public Vector3 currPosition = new Vector3(0,0,0);
+
 	void Awake() {
 		DontDestroyOnLoad (transform.gameObject);
 	}
