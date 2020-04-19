@@ -8,16 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/GearVrControllerTest.unity
     guid: d56af3aeb2176e7459f753c1c2e2dd97
-  - enabled: 0
-    path: Assets/Scenes/Tutorial.unity
-    guid: 088abd319fe124ca8a5e271cef98856f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/StartScreen.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Scenes/Backstage.unity
+  - enabled: 1
+    path: Assets/Scenes/Backstage1.unity
     guid: 305b4173ee362453893b90cf3d535a62
   - enabled: 1
+    path: Assets/Scenes/Backstage2.unity
+    guid: 625755416223542fab1cd0daf87d9db4
+  - enabled: 0
     path: Assets/Scenes/Frontstage.unity
     guid: 47ab2135fc61e4336a53ffacc1536a94
   - enabled: 0
@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/UIDesign.unity
     guid: ead566f48748a49999644e97adf603f5
+  - enabled: 0
+    path: Assets/Scenes/Tutorial.unity
+    guid: 088abd319fe124ca8a5e271cef98856f
   m_configObjects: {}
