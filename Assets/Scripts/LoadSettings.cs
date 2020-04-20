@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class LoadSettings : MonoBehaviour
 {
     public GameObject startObjs;
+    public GameObject backButton;
 
     public void AddSettings()
     {
@@ -15,5 +16,26 @@ public class LoadSettings : MonoBehaviour
     public void HideStartScreen()
     {
       startObjs.SetActive(false);
+    }
+    public void RevealStartScreen()
+    {
+      startObjs.SetActive(true);
+    }
+    public void UnloadSettings()
+    {
+      StartCoroutine("UnloadSet");
+    }
+    public void RevealBackButton()
+    {
+      backButton.SetActive(true);
+    }
+    public void HideBackButton()
+    {
+      backButton.SetActive(false);
+    }
+    IEnumerator UnloadSet()
+    {
+      yield return null;
+      SceneManager.UnloadScene("Settings");
     }
 }

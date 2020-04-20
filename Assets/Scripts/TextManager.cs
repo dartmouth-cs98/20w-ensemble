@@ -5,7 +5,7 @@ using UnityEngine;
 public class TextManager : MonoBehaviour
 {
     public GameObject[] texts;
-    // Start is called before the first frame update
+    
     public void FadeInAudience()
     {
       texts[0].SetActive(true);
