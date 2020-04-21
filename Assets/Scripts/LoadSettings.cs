@@ -31,6 +31,11 @@ public class LoadSettings : MonoBehaviour
     }
     public void HideBackButton()
     {
+      StartCoroutine("HideBack");
+    }
+    IEnumerator HideBack()
+    {
+      yield return null;
       backButton.SetActive(false);
     }
     IEnumerator UnloadSet()

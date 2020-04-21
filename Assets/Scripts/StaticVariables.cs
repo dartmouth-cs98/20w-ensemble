@@ -10,14 +10,14 @@ public class StaticVariables : MonoBehaviour
 
     public void audienceOptionUp()
     {
-      if(numAudience < 2)
+      if(numAudience < 8)
       {
         numAudience += 1;
       }
     }
     public void orchestraOptionUp()
     {
-      if(numOrchestra < 2)
+      if(numOrchestra < 8)
       {
         numOrchestra += 1;
       }

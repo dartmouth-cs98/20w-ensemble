@@ -5,7 +5,7 @@ using UnityEngine;
 public class TextManager : MonoBehaviour
 {
     public GameObject[] texts;
-    
+
     public void FadeInAudience()
     {
       texts[0].SetActive(true);
@@ -26,6 +26,10 @@ public class TextManager : MonoBehaviour
     {
       texts[4].SetActive(true);
     }
+    public void FadeInStatic()
+    {
+      texts[5].SetActive(true);
+    }
     public void FadeOutAudience()
     {
       texts[0].SetActive(false);
@@ -45,5 +49,9 @@ public class TextManager : MonoBehaviour
     public void FadeOutTempo()
     {
       texts[4].SetActive(false);
+    }
+    public void FadeOutStatic()
+    {
+      texts[5].SetActive(false);
     }
 }

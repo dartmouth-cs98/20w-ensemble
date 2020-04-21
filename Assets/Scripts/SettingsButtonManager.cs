@@ -9,6 +9,9 @@ public class SettingsButtonManager : MonoBehaviour
     public GameObject score;
     public GameObject tempo;
     public GameObject none;
+    public GameObject numAudience;
+    public GameObject numOrchestra;
+    public Material[] numbers;
 
     public void Start()
     {
@@ -28,6 +31,11 @@ public class SettingsButtonManager : MonoBehaviour
         tempo.SetActive(false);
         none.SetActive(true);
       }
+    }
+    public void Update()
+    {
+      numOrchestra.GetComponent<Renderer>().material = numbers[statVar.getOrchestra()];
+      numAudience.GetComponent<Renderer>().material = numbers[statVar.getAudience()];
     }
     public void SelectScore()
     {
