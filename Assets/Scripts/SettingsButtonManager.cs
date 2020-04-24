@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SettingsButtonManager : MonoBehaviour
 {
-    public StaticVariables statVar;
+    public GameManager statVar = GameObject.Find("GameManager");
     public GameObject score;
     public GameObject tempo;
     public GameObject none;
@@ -55,5 +55,32 @@ public class SettingsButtonManager : MonoBehaviour
       tempo.SetActive(false);
       none.SetActive(true);
     }
-
+    public void OrchestraUp()
+    {
+      statVar.orchestraOptionUp();
+    }
+    public void OrchestraDown()
+    {
+      statVar.orchestraOptionDown();
+    }
+    public void AudienceUp()
+    {
+      statVar.AudienceOptionUp();
+    }
+    public void AudienceDown()
+    {
+      statVar.AudienceOptionDown();
+    }
+    public void SelectScore()
+    {
+      statVar.followingOptionScore();
+    }
+    public void SelectTempo()
+    {
+      statVar.followingOptionTempo();
+    }
+    public void SelectNone()
+    {
+      statVar.followingOptionNone();
+    }
 }
