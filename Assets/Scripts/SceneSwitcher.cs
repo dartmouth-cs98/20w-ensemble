@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    public void playGame(){
+    public void moveForward(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
     public void moveBack(){
@@ -17,5 +17,9 @@ public class SceneSwitcher : MonoBehaviour
 
     public void goToFrontStage() {
     	SceneManager.LoadScene(3);
+    }
+
+    public void restartTutorial(){
+        SceneManager.LoadScene(0);
     }
 }
