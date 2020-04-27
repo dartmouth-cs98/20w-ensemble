@@ -1898,7 +1898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.41, y: -0.04}
+  m_AnchoredPosition: {x: -0.402, y: 0.01}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &583910842
@@ -5708,6 +5708,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   songID: -1
   currPosition: {x: 0, y: 0, z: 0}
+  numAudience: 0
+  numOrchestra: 0
+  followingType: score
 --- !u!4 &1896148819
 Transform:
   m_ObjectHideFlags: 0
