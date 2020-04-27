@@ -12,58 +12,58 @@ public class GameManager : MonoBehaviour {
 	public Vector3 currPosition = new Vector3(0,0,0);
 
 	//settings
-	static public int numAudience = 0;
-	static public int numOrchestra = 0;
-	static public string followingType = "score";
-	public void audienceOptionUp()
+	public int numAudience = 0;
+	public int numOrchestra = 0;
+	public string followingType = "score";
+	public void AudienceOptionUp()
 	{
 		if(numAudience < 8)
 		{
 			numAudience += 1;
 		}
 	}
-	public void orchestraOptionUp()
+	public void OrchestraOptionUp()
 	{
 		if(numOrchestra < 8)
 		{
 			numOrchestra += 1;
 		}
 	}
-	public void audienceOptionDown()
+	public void AudienceOptionDown()
 	{
 		if(numAudience > 0)
 		{
 			numAudience -= 1;
 		}
 	}
-	public void orchestraOptionDown()
+	public void OrchestraOptionDown()
 	{
 		if(numOrchestra > 0)
 		{
 			numOrchestra -= 1;
 		}
 	}
-	public void followingOptionScore()
+	public void FollowingOptionScore()
 	{
 		followingType = "score";
 	}
-	public void followingOptionTempo()
+	public void FollowingOptionTempo()
 	{
 		followingType = "tempo";
 	}
-	public void followingOptionNone()
+	public void FollowingOptionNone()
 	{
 		followingType = "static";
 	}
-	public string getFollowing()
+	public string GetFollowing()
 	{
 		return followingType;
 	}
-	public int getAudience()
+	public int GetAudience()
 	{
 		return numAudience;
 	}
-	public int getOrchestra()
+	public int GetOrchestra()
 	{
 		return numOrchestra;
 	}

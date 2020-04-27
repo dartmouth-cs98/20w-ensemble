@@ -41,6 +41,6 @@ public class LoadSettings : MonoBehaviour
     IEnumerator UnloadSet()
     {
       yield return null;
-      SceneManager.UnloadScene("Settings");
+      SceneManager.UnloadSceneAsync("Settings");
     }
 }
