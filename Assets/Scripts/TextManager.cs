@@ -6,52 +6,28 @@ public class TextManager : MonoBehaviour
 {
     public GameObject[] texts;
 
-    public void FadeInAudience()
+    public void FadeInScore()
     {
       texts[0].SetActive(true);
     }
-    public void FadeInOrchestra()
+    public void FadeInTempo()
     {
       texts[1].SetActive(true);
     }
-    public void FadeInFollowing()
+    public void FadeInStatic()
     {
       texts[2].SetActive(true);
     }
-    public void FadeInScore()
-    {
-      texts[3].SetActive(true);
-    }
-    public void FadeInTempo()
-    {
-      texts[4].SetActive(true);
-    }
-    public void FadeInStatic()
-    {
-      texts[5].SetActive(true);
-    }
-    public void FadeOutAudience()
+    public void FadeOutScore()
     {
       texts[0].SetActive(false);
     }
-    public void FadeOutOrchestra()
+    public void FadeOutTempo()
     {
       texts[1].SetActive(false);
     }
-    public void FadeOutFollowing()
-    {
-      texts[2].SetActive(false);
-    }
-    public void FadeOutScore()
-    {
-      texts[3].SetActive(false);
-    }
-    public void FadeOutTempo()
-    {
-      texts[4].SetActive(false);
-    }
     public void FadeOutStatic()
     {
-      texts[5].SetActive(false);
+      texts[2].SetActive(false);
     }
 }
