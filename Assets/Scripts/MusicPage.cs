@@ -6,36 +6,31 @@ using System;
 
 public class MusicPage : MonoBehaviour
 {
-	//Music Image
-	public float smooth;
-	public int pageID;
-	public string pageName;
-	private Vector3 targetAngle;
+    //Music Image
+    public float smooth;
+    public int pageID;
+    public string pageName;
+    private Vector3 targetAngle;
 
-
-	// Start is called before the first frame update
+    // Start is called before the first frame update
     void Start()
     {
-        targetAngle = (0f + (float)(2-pageID)*1f)*Vector3.forward;
+        targetAngle = (0f + (float)(2 - pageID) * 1f) * Vector3.forward;
     }
 
-	// Update is called once per frame
-    void Update()
+    // Update is called once per frame
+    // void Update()
+    // {
+    //  	this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, targetAngle, smooth * Time.deltaTime); // lerp to new angles
+    // }
+
+    public void turnRight()
     {
-     	this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, targetAngle, smooth * Time.deltaTime); // lerp to new angles
-    	
+        targetAngle = (180f - (float)pageID * 1f) * Vector3.forward;
     }
 
-	public void turnRight() {
-		targetAngle = (180f - (float)pageID*1f) * Vector3.forward;
-
-	}
-
-	public void turnLeft() {
-		targetAngle = (0f + (float)(2-pageID)*1f)*Vector3.forward;
-	}
-
-    
-
-    
+    public void turnLeft()
+    {
+        targetAngle = (0f + (float)(2 - pageID) * 1f) * Vector3.forward;
+    }
 }
