@@ -6,7 +6,7 @@ using System;
 using TMPro;
 
 public class OpenMusicBook : MonoBehaviour
-{ 
+{
     public TextMeshPro chalkboardText;
     List<GameObject> pages;
     int leftPage = -1;
@@ -21,7 +21,8 @@ public class OpenMusicBook : MonoBehaviour
         //gm = gmObject.GetComponent<GameManager>();
         gm = UnityEngine.Object.FindObjectOfType<GameManager>();
         pages = new List<GameObject>();
-        foreach (Transform child in transform){
+        foreach (Transform child in transform)
+        {
             pages.Add(child.gameObject);
         }
 
@@ -29,40 +30,49 @@ public class OpenMusicBook : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update(){  
+    void Update()
+    {
     }
 
-    public void turnRightPage() {
-        if(rightPage != -1) {
+    public void turnRightPage()
+    {
+        if (rightPage != -1)
+        {
             pages[rightPage].GetComponent<MusicPage>().turnRight();
 
             leftPage = rightPage;
-            chalkboardText.text = "Selected Song:\n" + pages[leftPage].GetComponent<MusicPage>().pageName;
+            // chalkboardText.text = "Selected Song:\n" + pages[leftPage].GetComponent<MusicPage>().pageName;
             gm.songID = leftPage;
-            if(rightPage < pages.Count - 1) {
+            if (rightPage < pages.Count - 1)
+            {
                 rightPage++;
-            } else {
+            }
+            else
+            {
                 rightPage = -1;
             }
         }
     }
 
-    public void turnLeftPage() {
+    public void turnLeftPage()
+    {
         //chalkboardText.text = "No music selected.";
-        if(leftPage != -1) {
+        if (leftPage != -1)
+        {
             pages[leftPage].GetComponent<MusicPage>().turnLeft();
 
             rightPage = leftPage;
-            if(leftPage > 0) {
+            if (leftPage > 0)
+            {
                 leftPage--;
-                chalkboardText.text = "Selected Song:\n" + pages[leftPage].GetComponent<MusicPage>().pageName;
+                // chalkboardText.text = "Selected Song:\n" + pages[leftPage].GetComponent<MusicPage>().pageName;
                 gm.songID = leftPage;
-
-            } else {
+            }
+            else
+            {
                 leftPage = -1;
                 gm.songID = -1;
-
-                chalkboardText.text = "No music selected.";
+                // chalkboardText.text = "No music selected.";
             }
 
         }
