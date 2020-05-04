@@ -2,30 +2,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SettingsButtonManager : MonoBehaviour
 {
-    public StaticVariables statVar;
+    GameManager statVar;
+    public TMP_Text numAudience;
+    public TMP_Text numOrchestra;
     public GameObject score;
     public GameObject tempo;
     public GameObject none;
-    public GameObject numAudience;
-    public GameObject numOrchestra;
-    public Material[] numbers;
 
-    public void Start()
+    void Start()
     {
-      if(String.Compare(statVar.getFollowing(), "score") == 0)
+      statVar = UnityEngine.Object.FindObjectOfType<GameManager>();
+      if(String.Compare(statVar.GetFollowing(), "score") == 0)
       {
         score.SetActive(true);
         tempo.SetActive(false);
         none.SetActive(false);
-      } else if(String.Compare(statVar.getFollowing(), "tempo") == 0)
+      } else if(String.Compare(statVar.GetFollowing(), "tempo") == 0)
       {
         score.SetActive(false);
         tempo.SetActive(true);
         none.SetActive(false);
-      } else if(String.Compare(statVar.getFollowing(), "static") == 0)
+      } else if(String.Compare(statVar.GetFollowing(), "static") == 0)
       {
         score.SetActive(false);
         tempo.SetActive(false);
@@ -34,26 +35,52 @@ public class SettingsButtonManager : MonoBehaviour
     }
     public void Update()
     {
-      numOrchestra.GetComponent<Renderer>().material = numbers[statVar.getOrchestra()];
-      numAudience.GetComponent<Renderer>().material = numbers[statVar.getAudience()];
+      numOrchestra.text = statVar.GetOrchestra().ToString();
+      numAudience.text = statVar.GetAudience().ToString();
+      
+      if(String.Compare(statVar.GetFollowing(), "score") == 0)
+      {
+        score.SetActive(true);
+        tempo.SetActive(false);
+        none.SetActive(false);
+      } else if(String.Compare(statVar.GetFollowing(), "tempo") == 0)
+      {
+        score.SetActive(false);
+        tempo.SetActive(true);
+        none.SetActive(false);
+      } else if(String.Compare(statVar.GetFollowing(), "static") == 0)
+      {
+        score.SetActive(false);
+        tempo.SetActive(false);
+        none.SetActive(true);
+      }
+    }
+    public void OrchestraUp()
+    {
+      statVar.OrchestraOptionUp();
+    }
+    public void OrchestraDown()
+    {
+      statVar.OrchestraOptionDown();
+    }
+    public void AudienceUp()
+    {
+      statVar.AudienceOptionUp();
+    }
+    public void AudienceDown()
+    {
+      statVar.AudienceOptionDown();
     }
     public void SelectScore()
     {
-      score.SetActive(true);
-      tempo.SetActive(false);
-      none.SetActive(false);
+      statVar.FollowingOptionScore();
     }
     public void SelectTempo()
     {
-      score.SetActive(false);
-      tempo.SetActive(true);
-      none.SetActive(false);
+      statVar.FollowingOptionTempo();
     }
-    public void SelectStatic()
+    public void SelectNone()
     {
-      score.SetActive(false);
-      tempo.SetActive(false);
-      none.SetActive(true);
+      statVar.FollowingOptionNone();
     }
-
 }
