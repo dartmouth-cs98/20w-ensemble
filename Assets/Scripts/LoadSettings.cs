@@ -6,9 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class LoadSettings : MonoBehaviour
 {
+    GameManager statVar;
     public GameObject startObjs;
     public GameObject backButton;
 
+    void Start()
+    {
+      statVar = UnityEngine.Object.FindObjectOfType<GameManager>();
+      if(statVar.ShouldLoadSettings())
+      {
+        startObjs.SetActive(false);
+        AddSettings();
+      }
+    }
     public void AddSettings()
     {
       SceneManager.LoadScene("Settings", LoadSceneMode.Additive);

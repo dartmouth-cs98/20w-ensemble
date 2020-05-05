@@ -14,11 +14,12 @@ public class AccompanimentTest : MonoBehaviour
     {
       AP.PlayNote(vioMidi, 1.0f, "violin");
       vioMidi = vioMidi + 10;
-    }
 
+    }
     public void TestCelloPlayback()
     {
       AP.PlayNote(celloMidi, 1.0f, "cello");
       celloMidi = celloMidi + 10;
     }
+
 }

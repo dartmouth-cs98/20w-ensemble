@@ -25,7 +25,17 @@ public class SceneSwitcher : MonoBehaviour
 
     public void goToFrontStage()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("Frontstage");
+    }
+
+    public void toStartScreen()
+    {
+      SceneManager.LoadScene("StartScreen");
+    }
+
+    public void toBackStage()
+    {
+      SceneManager.LoadScene("Backstage1");
     }
 
     public void restartTutorial()
