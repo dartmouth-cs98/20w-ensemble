@@ -144,7 +144,7 @@ public class NotePlayer : MonoBehaviour
     };
 
 // need to format sound files to be instrument followed by three digit midi
-    public void PlayNote(int midi, float duration)
+    public void NoteOn(int midi)
     {
       float ratio = 1f;
       instrument.clip = FindCloseRoot(midi);
@@ -156,7 +156,7 @@ public class NotePlayer : MonoBehaviour
         ratio = midiToFrequency[midi]/midiToFrequency[rootVal];
       }
       mixer.SetFloat(pitch, ratio);
-      StartCoroutine(PlayStop(duration));
+      instrument.Play();
     }
 
     private AudioClip FindCloseRoot(int midi)
@@ -178,10 +178,8 @@ public class NotePlayer : MonoBehaviour
       return closeClip;
     }
 
-    IEnumerator PlayStop(float duration)
+    public void NoteOff()
     {
-      instrument.Play();
-      yield return new WaitForSeconds(duration);
       instrument.Stop();
     }
 }

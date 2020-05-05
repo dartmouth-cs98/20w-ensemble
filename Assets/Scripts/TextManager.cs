@@ -6,28 +6,36 @@ public class TextManager : MonoBehaviour
 {
     public GameObject[] texts;
 
-    public void FadeInScore()
+    public void FadeInTempo()
     {
       texts[0].SetActive(true);
     }
-    public void FadeInTempo()
+    public void FadeInStatic()
     {
       texts[1].SetActive(true);
     }
-    public void FadeInStatic()
+    public void FadeInSmall()
     {
       texts[2].SetActive(true);
     }
-    public void FadeOutScore()
+    public void FadeInLarge()
     {
-      texts[0].SetActive(false);
+      texts[3].SetActive(true);
     }
     public void FadeOutTempo()
     {
-      texts[1].SetActive(false);
+      texts[0].SetActive(false);
     }
     public void FadeOutStatic()
     {
+      texts[1].SetActive(false);
+    }
+    public void FadeOutSmall()
+    {
       texts[2].SetActive(false);
+    }
+    public void FadeOutLarge()
+    {
+      texts[3].SetActive(false);
     }
 }

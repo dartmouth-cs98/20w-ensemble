@@ -11,10 +11,16 @@ public class AccompanimentPlayer : MonoBehaviour
     {
       {"violin", 0},
       {"cello", 1},
+      {"viola", 2},
+      {"bass", 3}
     };
 
     public void PlayNote(int midi, float duration, string instrument)
     {
-      noteplayers[instrumentMap[instrument]].PlayNote(midi, duration);
+      noteplayers[instrumentMap[instrument]].NoteOn(midi);
+    }
+    public void StopNote(string instrument)
+    {
+      noteplayers[instrumentMap[instrument]].NoteOff();
     }
 }

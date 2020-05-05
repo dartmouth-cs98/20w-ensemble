@@ -6,7 +6,8 @@ public class GameManager : MonoBehaviour {
 	protected GameManager () {} // guarantee this will be always a singleton only - can't use the constructor!
 
 	//what song to play
-	public int songID = -1;
+	static int MAX_SONGS = 3;
+	public int songID = 0;
 
 	//position for teleportation
 	public Vector3 currPosition = new Vector3(0,0,0);
@@ -14,7 +15,9 @@ public class GameManager : MonoBehaviour {
 	//settings
 	public int numAudience = 0;
 	public int numOrchestra = 0;
-	public string followingType = "score";
+	public string followingType = "follow";
+	public string stageSize = "small";
+	public bool loadSettingsNow = false;
 	public void AudienceOptionUp()
 	{
 		if(numAudience < 8)
@@ -45,15 +48,27 @@ public class GameManager : MonoBehaviour {
 	}
 	public void FollowingOptionScore()
 	{
-		followingType = "score";
-	}
-	public void FollowingOptionTempo()
-	{
-		followingType = "tempo";
+		followingType = "follow";
 	}
 	public void FollowingOptionNone()
 	{
 		followingType = "static";
+	}
+	public void SmallStage()
+	{
+		stageSize = "small";
+	}
+	public void LargeStage()
+	{
+		stageSize = "large";
+	}
+	public void LoadSettingsTrue()
+	{
+		loadSettingsNow = true;
+	}
+	public void LoadSettingsFalse()
+	{
+		loadSettingsNow = false;
 	}
 	public string GetFollowing()
 	{
@@ -67,8 +82,32 @@ public class GameManager : MonoBehaviour {
 	{
 		return numOrchestra;
 	}
+	public string GetStage()
+	{
+		return stageSize;
+	}
+	public bool ShouldLoadSettings()
+	{
+		return loadSettingsNow;
+	}
 
-	//persistence function
+	//song choice
+	public void IncreaseSongID()
+	{
+		if(songID < MAX_SONGS)
+		{
+			songID += 1;
+		}
+	}
+	public void DecreaseSongID()
+	{
+		if(songID > 0)
+		{
+			songID -= 1;
+		}
+	}
+
+	//persistence
 	void Awake() {
 		DontDestroyOnLoad (transform.gameObject);
 	}
