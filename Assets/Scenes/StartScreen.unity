@@ -5920,13 +5920,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcef44dc35f0548fdb6f7d5b0d4d586e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songID: -1
+  songID: 0
   currPosition: {x: 0, y: 0, z: 0}
   numAudience: 0
   numOrchestra: 0
-  followingType: score
+  followingType: static
   stageSize: small
   loadSettingsNow: 0
+  fromFrontStage: 0
+  fromBackStage: 0
 --- !u!4 &1896148819
 Transform:
   m_ObjectHideFlags: 0

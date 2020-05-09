@@ -11,15 +11,16 @@ public class TempoChange : MonoBehaviour
     private static float MAX = 2.0f;
     private static float MIN = .75f;
 
-    public void SetTempo(float change) {
-      if(change > MAX)
+    public void SetTempo(float change, float start) {
+      float val = change/start;
+      if(val > MAX)
       {
-        change = MAX;
-      } else if(change < MIN)
+        val = MAX;
+      } else if(val < MIN)
       {
-        change = MIN;
+        val = MIN;
       }
-      master.SetFloat(tempo, change);
-      master.SetFloat(pitch, 1/change);
+      master.SetFloat(tempo, val);
+      master.SetFloat(pitch, 1/val);
     }
 }
