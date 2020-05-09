@@ -14,6 +14,7 @@ public class SettingsButtonManager : MonoBehaviour
     public GameObject small;
     public GameObject large;
     public GameObject backStageButton;
+    public GameObject frontStageButton;
 
     void Start()
     {
@@ -26,7 +27,8 @@ public class SettingsButtonManager : MonoBehaviour
       {
         follow.SetActive(false);
         none.SetActive(true);
-      } else if(String.Compare(statVar.GetStage(), "large") == 0)
+      }
+      if(String.Compare(statVar.GetStage(), "large") == 0)
       {
         large.SetActive(true);
         small.SetActive(false);
@@ -35,9 +37,10 @@ public class SettingsButtonManager : MonoBehaviour
         large.SetActive(false);
         small.SetActive(true);
       }
-      backStageButton.SetActive(statVar.ShouldLoadSettings());
+      backStageButton.SetActive(statVar.FromBackStage());
+      frontStageButton.SetActive(statVar.FromFrontStage());
     }
-    public void Update()
+    void Update()
     {
       numOrchestra.text = statVar.GetOrchestra().ToString();
       numAudience.text = statVar.GetAudience().ToString();
@@ -50,7 +53,8 @@ public class SettingsButtonManager : MonoBehaviour
       {
         follow.SetActive(false);
         none.SetActive(true);
-      } else if(String.Compare(statVar.GetStage(), "large") == 0)
+      }
+      if(String.Compare(statVar.GetStage(), "large") == 0)
       {
         large.SetActive(true);
         small.SetActive(false);
@@ -91,5 +95,13 @@ public class SettingsButtonManager : MonoBehaviour
     public void SelectLarge()
     {
       statVar.LargeStage();
+    }
+    public void ToggleFront()
+    {
+      statVar.FrontStageToggle();
+    }
+    public void ToggleBack()
+    {
+      statVar.BackStageToggle();
     }
 }

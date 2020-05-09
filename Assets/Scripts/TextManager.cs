@@ -6,7 +6,7 @@ public class TextManager : MonoBehaviour
 {
     public GameObject[] texts;
 
-    public void FadeInTempo()
+    public void FadeInScore()
     {
       texts[0].SetActive(true);
     }
@@ -22,7 +22,7 @@ public class TextManager : MonoBehaviour
     {
       texts[3].SetActive(true);
     }
-    public void FadeOutTempo()
+    public void FadeOutScore()
     {
       texts[0].SetActive(false);
     }

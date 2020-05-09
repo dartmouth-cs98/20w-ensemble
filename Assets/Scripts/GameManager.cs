@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour {
 	protected GameManager () {} // guarantee this will be always a singleton only - can't use the constructor!
 
 	//what song to play
-	static int MAX_SONGS = 3;
+	static int MAX_SONGS = 2;
 	public int songID = 0;
 
 	//position for teleportation
@@ -15,9 +15,29 @@ public class GameManager : MonoBehaviour {
 	//settings
 	public int numAudience = 0;
 	public int numOrchestra = 0;
-	public string followingType = "follow";
+	public string followingType = "static";
 	public string stageSize = "small";
 	public bool loadSettingsNow = false;
+	public bool fromFrontStage = false;
+	public bool fromBackStage = false;
+
+	public void FrontStageToggle()
+	{
+		fromFrontStage = !fromFrontStage;
+	}
+	public void BackStageToggle()
+	{
+		fromBackStage = !fromBackStage;
+	}
+	public bool FromFrontStage()
+	{
+		return fromFrontStage;
+	}
+	public bool FromBackStage()
+	{
+		return fromBackStage;
+	}
+
 	public void AudienceOptionUp()
 	{
 		if(numAudience < 8)
@@ -62,13 +82,9 @@ public class GameManager : MonoBehaviour {
 	{
 		stageSize = "large";
 	}
-	public void LoadSettingsTrue()
+	public void LoadSettingsToggle()
 	{
-		loadSettingsNow = true;
-	}
-	public void LoadSettingsFalse()
-	{
-		loadSettingsNow = false;
+		loadSettingsNow = !loadSettingsNow;
 	}
 	public string GetFollowing()
 	{
@@ -105,6 +121,10 @@ public class GameManager : MonoBehaviour {
 		{
 			songID -= 1;
 		}
+	}
+	public int GetSong()
+	{
+		return songID;
 	}
 
 	//persistence
