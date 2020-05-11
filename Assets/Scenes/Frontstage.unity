@@ -33001,9 +33001,12 @@ MonoBehaviour:
   tempoDisp: {fileID: 1284491774}
   staticAudio: {fileID: 1917703169}
   samples:
+  - {fileID: 8300000, guid: 00e4290e8db1a4bdb910ed92e3767f90, type: 3}
   - {fileID: 8300000, guid: 5241b9ab2096e492a8c21338786d6206, type: 3}
-  - {fileID: 8300000, guid: 5241b9ab2096e492a8c21338786d6206, type: 3}
+  - {fileID: 8300000, guid: 85d8faec51607475698547b1f6f64f81, type: 3}
   sceneDivider: {fileID: 2116617919}
+  tempoMeter: {fileID: 1403621029}
+  meterButton: {fileID: 1611644301}
 --- !u!114 &768655132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71583,23 +71586,58 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 081039a448bec6e48827af5f9b606f83, type: 2}
     - target: {fileID: 6542341730280202221, guid: c1688bb9173de454ea1cb4217608bbd3,
         type: 3}
+      propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542341730280202221, guid: c1688bb9173de454ea1cb4217608bbd3,
+        type: 3}
       propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1403621029}
+      objectReference: {fileID: 768655131}
     - target: {fileID: 6542341730280202221, guid: c1688bb9173de454ea1cb4217608bbd3,
         type: 3}
       propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: MeterToggle
       objectReference: {fileID: 0}
     - target: {fileID: 6542341730280202221, guid: c1688bb9173de454ea1cb4217608bbd3,
         type: 3}
       propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6542341730280202221, guid: c1688bb9173de454ea1cb4217608bbd3,
         type: 3}
       propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542341730280202221, guid: c1688bb9173de454ea1cb4217608bbd3,
+        type: 3}
+      propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542341730280202221, guid: c1688bb9173de454ea1cb4217608bbd3,
+        type: 3}
+      propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542341730280202221, guid: c1688bb9173de454ea1cb4217608bbd3,
+        type: 3}
+      propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542341730280202221, guid: c1688bb9173de454ea1cb4217608bbd3,
+        type: 3}
+      propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 768655131}
+    - target: {fileID: 6542341730280202221, guid: c1688bb9173de454ea1cb4217608bbd3,
+        type: 3}
+      propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: MeterToggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542341730280202221, guid: c1688bb9173de454ea1cb4217608bbd3,
+        type: 3}
+      propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6542341730280202222, guid: c1688bb9173de454ea1cb4217608bbd3,
         type: 3}
@@ -71675,7 +71713,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4c1152ce6e5af4d63a10d7bb079fd066, type: 2}
+      objectReference: {fileID: 2100000, guid: 69a416117825d43d9ba328277a9b1200, type: 2}
     - target: {fileID: 6542341731163075431, guid: c1688bb9173de454ea1cb4217608bbd3,
         type: 3}
       propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.size
@@ -71869,7 +71907,7 @@ PrefabInstance:
     - target: {fileID: 6542341731504870690, guid: c1688bb9173de454ea1cb4217608bbd3,
         type: 3}
       propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayDelayed
+      value: UnPause
       objectReference: {fileID: 0}
     - target: {fileID: 6542341731504870690, guid: c1688bb9173de454ea1cb4217608bbd3,
         type: 3}
@@ -71931,6 +71969,11 @@ PrefabInstance:
       propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
       value: PlayDelayed
       objectReference: {fileID: 0}
+    - target: {fileID: 6542341731504870690, guid: c1688bb9173de454ea1cb4217608bbd3,
+        type: 3}
+      propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6542341731504870691, guid: c1688bb9173de454ea1cb4217608bbd3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -71940,7 +71983,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 69a416117825d43d9ba328277a9b1200, type: 2}
+      objectReference: {fileID: 2100000, guid: 4c1152ce6e5af4d63a10d7bb079fd066, type: 2}
+    - target: {fileID: 6542341731504870700, guid: c1688bb9173de454ea1cb4217608bbd3,
+        type: 3}
+      propertyPath: m_Name
+      value: UnpauseButton
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1688bb9173de454ea1cb4217608bbd3, type: 3}
 --- !u!4 &1611644299 stripped
@@ -71952,6 +72000,12 @@ Transform:
 --- !u!4 &1611644300 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6542341730280202222, guid: c1688bb9173de454ea1cb4217608bbd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1611644298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1611644301 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6542341730280202223, guid: c1688bb9173de454ea1cb4217608bbd3,
     type: 3}
   m_PrefabInstance: {fileID: 1611644298}
   m_PrefabAsset: {fileID: 0}
