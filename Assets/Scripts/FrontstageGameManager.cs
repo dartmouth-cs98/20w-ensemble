@@ -20,16 +20,21 @@ public class FrontstageGameManager : MonoBehaviour
     public AudioSource staticAudio;
     public AudioClip[] samples;
     public GameObject sceneDivider;
+    public GameObject tempoMeter;
+    bool showMeter = false;
+    public GameObject meterButton;
 
     private Dictionary<string, int> songIndex = new Dictionary<string, int>()
     {
       {"canonInD", 0},
-      {"letItGo", 1}
+      {"letItGo", 1},
+      {"beethoven5", 2}
     };
     private Dictionary<int, string> songMap = new Dictionary<int, string>()
     {
       {0, "canonInD"},
-      {1, "letItGo"}
+      {1, "letItGo"},
+      {2, "beethoven5"}
     };
     private Dictionary<int, string> instrumentMap = new Dictionary<int, string>()
     {
@@ -65,10 +70,18 @@ public class FrontstageGameManager : MonoBehaviour
             tempo = 60f;
             maxTempo = 120f;
             minTempo = 45f;
+          } else if(String.Compare(songMap[statVar.GetSong()], "beethoven5") == 0)
+          {
+            ChangeInstrument("beethoven5");
+            initTempo = 108f;
+            tempo = 108f;
+            maxTempo = 216f;
+            minTempo = 81f;
           }
+          meterButton.SetActive(true);
         } else if(String.Compare(statVar.GetFollowing(), "follow") == 0)
         {
-
+          meterButton.SetActive(false);
         }
     }
     void Update()
@@ -99,8 +112,13 @@ public class FrontstageGameManager : MonoBehaviour
     }
     public void SettingsToggle()
     {
-        statVar.LoadSettingsToggle();
-        statVar.FrontStageToggle();
+      statVar.LoadSettingsToggle();
+      statVar.FrontStageToggle();
     }
 
+    public void MeterToggle()
+    {
+      tempoMeter.SetActive(!showMeter);
+      showMeter = !showMeter;
+    }
 }
