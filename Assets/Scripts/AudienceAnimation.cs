@@ -9,11 +9,10 @@ public class AudienceAnimation : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        int pickAnumber = Random.Range(1, 6);
-        Debug.Log(pickAnumber);
+        int pickAnumber = Random.Range(1, 11);
         anim.SetInteger("sittingPose", pickAnumber);
         anim.SetBool("isSitting", true);
-        int pickAnumber2 = Random.Range(1, 8);
+        int pickAnumber2 = Random.Range(1, 13);
         anim.SetInteger("clappingPose", pickAnumber2);
     }
 
