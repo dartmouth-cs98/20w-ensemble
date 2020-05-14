@@ -22,7 +22,7 @@
 ## Deploying the .apk
 * Download Android File Transfer: https://www.android.com/filetransfer/
 * Go into your Oculus Settings and in Experimental Settings, toggle on Hands.
-* Download the .apk from: https://drive.google.com/file/d/1885ymN7V558fzkQq8hXYaf3l3yGvhPt1/view?usp=sharing
+* Download the .apk from: https://drive.google.com/open?id=1cYv9yLu8GmIc1dPFF6ANXLsEJli83H9a
 * Connect the oculus to your compute and use Android File Transfer to move the .apk into your oculus.
 * Run the .apk on your oculus!
 
