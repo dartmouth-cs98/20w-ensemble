@@ -3233,8 +3233,9 @@ GameObject:
   m_Component:
   - component: {fileID: 89387543}
   - component: {fileID: 89387544}
+  - component: {fileID: 89387545}
   m_Layer: 0
-  m_Name: String4
+  m_Name: Instrument4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3265,7 +3266,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8cf547c9f55944e90b2ecfdc8bf8e34d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 394924a91f91a49cf80ae44991988c10, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3351,6 +3352,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &89387545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89387542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe943983efa6c44189da713ba131fe5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instrument: {fileID: 89387544}
+  mixer: {fileID: 24100000, guid: 14cc13521120a46f9b066ee39ff8f3b9, type: 2}
+  clips: []
+  pitch: PitchOffset
 --- !u!1001 &89845296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12590,6 +12607,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd59442beab1249739d876e1ac1051d9, type: 3}
+--- !u!1 &250656478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 250656480}
+  - component: {fileID: 250656479}
+  m_Layer: 0
+  m_Name: Server
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &250656479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250656478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd92e189c8ac4f50b1e47b56d7b3bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AP: {fileID: 0}
+--- !u!4 &250656480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250656478}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.24499989, y: 1.6700001, z: -0.3699999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &252647286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20708,12 +20769,12 @@ GameObject:
   - component: {fileID: 408978273}
   - component: {fileID: 408978274}
   m_Layer: 0
-  m_Name: DoubleBass
+  m_Name: Instrument5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &408978273
 Transform:
   m_ObjectHideFlags: 0
@@ -29906,12 +29967,12 @@ GameObject:
   - component: {fileID: 666024851}
   - component: {fileID: 666024852}
   m_Layer: 0
-  m_Name: Horn
+  m_Name: Instrument7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &666024851
 Transform:
   m_ObjectHideFlags: 0
@@ -32971,7 +33032,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc4ffa6facf441e0ac0fe19892b0a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteplayers: []
+  noteplayers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &768655130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33007,6 +33072,11 @@ MonoBehaviour:
   sceneDivider: {fileID: 2116617919}
   tempoMeter: {fileID: 1403621029}
   meterButton: {fileID: 1611644301}
+  server: {fileID: 250656478}
+  replayButton: {fileID: 2100000, guid: 69a416117825d43d9ba328277a9b1200, type: 2}
+  playButton: {fileID: 1611644302}
+  pause: {fileID: 1611644304}
+  unpause: {fileID: 1611644303}
 --- !u!114 &768655132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47053,8 +47123,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1062409603}
   - component: {fileID: 1062409604}
+  - component: {fileID: 1062409605}
   m_Layer: 0
-  m_Name: String3
+  m_Name: Instrument3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47085,7 +47156,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f9ed7f789cec84d25af1cf958207283f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 701375b58154340c6a2828610600fc96, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -47171,6 +47242,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1062409605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062409602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe943983efa6c44189da713ba131fe5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instrument: {fileID: 1062409604}
+  mixer: {fileID: 24100000, guid: e6cd3906bbd744616a5eeaa5cd141c09, type: 2}
+  clips: []
+  pitch: PitchOffset
 --- !u!1001 &1062703451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65714,8 +65801,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1531054511}
   - component: {fileID: 1531054512}
+  - component: {fileID: 1531054513}
   m_Layer: 0
-  m_Name: String2
+  m_Name: Instrument2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65746,7 +65834,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4de85e2eab58140d7a58bd436d1c5665, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7e78229683f6d4d879e43bd799cb9c38, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -65832,6 +65920,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1531054513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531054510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe943983efa6c44189da713ba131fe5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instrument: {fileID: 1531054512}
+  mixer: {fileID: 24100000, guid: 00764ad1a9e6b497f990204630adc317, type: 2}
+  clips: []
+  pitch: PitchOffset
 --- !u!1001 &1533945413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71713,11 +71817,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 69a416117825d43d9ba328277a9b1200, type: 2}
+      objectReference: {fileID: 2100000, guid: 4c1152ce6e5af4d63a10d7bb079fd066, type: 2}
     - target: {fileID: 6542341731163075431, guid: c1688bb9173de454ea1cb4217608bbd3,
         type: 3}
       propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6542341731163075431, guid: c1688bb9173de454ea1cb4217608bbd3,
         type: 3}
@@ -71733,11 +71837,11 @@ PrefabInstance:
         type: 3}
       propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1917703169}
+      objectReference: {fileID: 768655131}
     - target: {fileID: 6542341731163075431, guid: c1688bb9173de454ea1cb4217608bbd3,
         type: 3}
       propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Play
+      value: ReplayToggle
       objectReference: {fileID: 0}
     - target: {fileID: 6542341731163075431, guid: c1688bb9173de454ea1cb4217608bbd3,
         type: 3}
@@ -71812,6 +71916,11 @@ PrefabInstance:
     - target: {fileID: 6542341731163075431, guid: c1688bb9173de454ea1cb4217608bbd3,
         type: 3}
       propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542341731163075431, guid: c1688bb9173de454ea1cb4217608bbd3,
+        type: 3}
+      propertyPath: actionEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6542341731413560971, guid: c1688bb9173de454ea1cb4217608bbd3,
@@ -71893,6 +72002,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542341731413560980, guid: c1688bb9173de454ea1cb4217608bbd3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6542341731504870690, guid: c1688bb9173de454ea1cb4217608bbd3,
         type: 3}
@@ -71989,6 +72103,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnpauseButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6542341731504870700, guid: c1688bb9173de454ea1cb4217608bbd3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1688bb9173de454ea1cb4217608bbd3, type: 3}
 --- !u!4 &1611644299 stripped
@@ -72006,6 +72125,24 @@ Transform:
 --- !u!1 &1611644301 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6542341730280202223, guid: c1688bb9173de454ea1cb4217608bbd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1611644298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1611644302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6542341731163075425, guid: c1688bb9173de454ea1cb4217608bbd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1611644298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1611644303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6542341731504870700, guid: c1688bb9173de454ea1cb4217608bbd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1611644298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1611644304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6542341731413560980, guid: c1688bb9173de454ea1cb4217608bbd3,
     type: 3}
   m_PrefabInstance: {fileID: 1611644298}
   m_PrefabAsset: {fileID: 0}
@@ -79562,12 +79699,12 @@ GameObject:
   - component: {fileID: 1751851985}
   - component: {fileID: 1751851986}
   m_Layer: 0
-  m_Name: Harp
+  m_Name: Instrument6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1751851985
 Transform:
   m_ObjectHideFlags: 0
@@ -90412,8 +90549,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2019741425}
   - component: {fileID: 2019741426}
+  - component: {fileID: 2019741427}
   m_Layer: 0
-  m_Name: String1
+  m_Name: Instrument1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90444,7 +90582,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3aaed87ade90c4a8e80d8de5f4b18759, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0da60464aaf714662ae0dfc38459eb2a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -90530,6 +90668,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2019741427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019741424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe943983efa6c44189da713ba131fe5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instrument: {fileID: 2019741426}
+  mixer: {fileID: 24100000, guid: d69af3a3b00974d40b6300f6f6c3e230, type: 2}
+  clips: []
+  pitch: PitchOffset
 --- !u!1 &2020725131
 GameObject:
   m_ObjectHideFlags: 0

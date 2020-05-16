@@ -13,7 +13,7 @@ public class LoadSettings : MonoBehaviour
     void Start()
     {
       statVar = UnityEngine.Object.FindObjectOfType<GameManager>();
-      if(statVar.ShouldLoadSettings())
+      if(statVar.FromFrontStage())
       {
         startObjs.SetActive(false);
         AddSettings();

@@ -23,6 +23,12 @@ public class FrontstageGameManager : MonoBehaviour
     public GameObject tempoMeter;
     bool showMeter = false;
     public GameObject meterButton;
+    public GameObject server;
+    public Material replayButton;
+    public GameObject playButton;
+    public GameObject pause;
+    public GameObject unpause;
+    bool pressed = false;
 
     private Dictionary<string, int> songIndex = new Dictionary<string, int>()
     {
@@ -82,6 +88,7 @@ public class FrontstageGameManager : MonoBehaviour
         } else if(String.Compare(statVar.GetFollowing(), "follow") == 0)
         {
           meterButton.SetActive(false);
+          //server.SetActive(true);
         }
     }
     void Update()
@@ -112,7 +119,6 @@ public class FrontstageGameManager : MonoBehaviour
     }
     public void SettingsToggle()
     {
-      statVar.LoadSettingsToggle();
       statVar.FrontStageToggle();
     }
 
@@ -120,5 +126,15 @@ public class FrontstageGameManager : MonoBehaviour
     {
       tempoMeter.SetActive(!showMeter);
       showMeter = !showMeter;
+    }
+
+    public void ReplayToggle()
+    {
+      if(!pressed){
+        playButton.GetComponent<MeshRenderer>().material = replayButton;
+        pressed = true;
+        pause.SetActive(true);
+        unpause.SetActive(true);
+      }
     }
 }

@@ -13,7 +13,6 @@ public class SettingsButtonManager : MonoBehaviour
     public GameObject none;
     public GameObject small;
     public GameObject large;
-    public GameObject backStageButton;
     public GameObject frontStageButton;
 
     void Start()
@@ -37,7 +36,6 @@ public class SettingsButtonManager : MonoBehaviour
         large.SetActive(false);
         small.SetActive(true);
       }
-      backStageButton.SetActive(statVar.FromBackStage());
       frontStageButton.SetActive(statVar.FromFrontStage());
     }
     void Update()
@@ -99,9 +97,5 @@ public class SettingsButtonManager : MonoBehaviour
     public void ToggleFront()
     {
       statVar.FrontStageToggle();
-    }
-    public void ToggleBack()
-    {
-      statVar.BackStageToggle();
     }
 }
