@@ -15,7 +15,7 @@ public class AccompanimentPlayer : MonoBehaviour
       {"bass", 3}
     };
 
-    public void PlayNote(int midi, float duration, string instrument)
+    public void PlayNote(int midi, string instrument)
     {
       noteplayers[instrumentMap[instrument]].NoteOn(midi);
     }

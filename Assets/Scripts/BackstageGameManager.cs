@@ -12,9 +12,4 @@ public class BackstageGameManager : MonoBehaviour
     {
       statVar = UnityEngine.Object.FindObjectOfType<GameManager>();
     }
-    public void SettingsToggle()
-    {
-      statVar.LoadSettingsToggle();
-      statVar.BackStageToggle();
-    }
 }

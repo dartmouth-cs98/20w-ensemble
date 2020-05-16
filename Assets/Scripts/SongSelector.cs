@@ -23,14 +23,18 @@ public class SongSelector : MonoBehaviour
         songDisplay.text = songMap[statVar.GetSong()];
     }
 
+    void Update()
+    {
+
+      songDisplay.text = songMap[statVar.GetSong()];
+    }
+
     public void incSong()
     {
       statVar.IncreaseSongID();
-      songDisplay.text = songMap[statVar.GetSong()];
     }
     public void decSong()
     {
       statVar.DecreaseSongID();
-      songDisplay.text = songMap[statVar.GetSong()];
     }
 }

@@ -17,25 +17,15 @@ public class GameManager : MonoBehaviour {
 	public int numOrchestra = 0;
 	public string followingType = "static";
 	public string stageSize = "small";
-	public bool loadSettingsNow = false;
 	public bool fromFrontStage = false;
-	public bool fromBackStage = false;
 
 	public void FrontStageToggle()
 	{
 		fromFrontStage = !fromFrontStage;
 	}
-	public void BackStageToggle()
-	{
-		fromBackStage = !fromBackStage;
-	}
 	public bool FromFrontStage()
 	{
 		return fromFrontStage;
-	}
-	public bool FromBackStage()
-	{
-		return fromBackStage;
 	}
 
 	public void AudienceOptionUp()
@@ -82,10 +72,6 @@ public class GameManager : MonoBehaviour {
 	{
 		stageSize = "large";
 	}
-	public void LoadSettingsToggle()
-	{
-		loadSettingsNow = !loadSettingsNow;
-	}
 	public string GetFollowing()
 	{
 		return followingType;
@@ -101,10 +87,6 @@ public class GameManager : MonoBehaviour {
 	public string GetStage()
 	{
 		return stageSize;
-	}
-	public bool ShouldLoadSettings()
-	{
-		return loadSettingsNow;
 	}
 
 	//song choice

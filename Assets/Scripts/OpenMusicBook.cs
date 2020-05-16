@@ -42,15 +42,15 @@ public class OpenMusicBook : MonoBehaviour
 
             leftPage = rightPage;
             // chalkboardText.text = "Selected Song:\n" + pages[leftPage].GetComponent<MusicPage>().pageName;
-            gm.songID = leftPage;
+            //gm.IncreaseSongID();
             if (rightPage < pages.Count - 1)
             {
                 rightPage++;
             }
-            else
+            /*else
             {
                 rightPage = -1;
-            }
+            }*/
         }
     }
 
@@ -66,14 +66,14 @@ public class OpenMusicBook : MonoBehaviour
             {
                 leftPage--;
                 // chalkboardText.text = "Selected Song:\n" + pages[leftPage].GetComponent<MusicPage>().pageName;
-                gm.songID = leftPage;
+                //gm.DecreaseSongID();
             }
-            else
+            /*else
             {
                 leftPage = -1;
                 gm.songID = -1;
                 // chalkboardText.text = "No music selected.";
-            }
+            }*/
 
         }
     }
