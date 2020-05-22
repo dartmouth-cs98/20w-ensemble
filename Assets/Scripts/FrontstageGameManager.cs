@@ -28,6 +28,7 @@ public class FrontstageGameManager : MonoBehaviour
     public GameObject playButton;
     public GameObject pause;
     public GameObject unpause;
+    public GameObject endButton;
     bool pressed = false;
 
     private Dictionary<string, int> songIndex = new Dictionary<string, int>()
@@ -135,6 +136,7 @@ public class FrontstageGameManager : MonoBehaviour
         pressed = true;
         pause.SetActive(true);
         unpause.SetActive(true);
+        endButton.SetActive(true);
       }
     }
 }

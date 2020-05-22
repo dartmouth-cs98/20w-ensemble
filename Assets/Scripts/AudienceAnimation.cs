@@ -5,14 +5,15 @@ using UnityEngine;
 public class AudienceAnimation : MonoBehaviour
 {
     public Animator anim;
+    public AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        int pickAnumber = Random.Range(1, 11);
+        int pickAnumber = Random.Range(1, 5);
         anim.SetInteger("sittingPose", pickAnumber);
         anim.SetBool("isSitting", true);
-        int pickAnumber2 = Random.Range(1, 13);
+        int pickAnumber2 = Random.Range(1, 7);
         anim.SetInteger("clappingPose", pickAnumber2);
     }
 
@@ -30,5 +31,7 @@ public class AudienceAnimation : MonoBehaviour
             anim.SetBool("isClapping", false);
             anim.SetBool("isSitting", true);
         }
+
+
     }
 }
