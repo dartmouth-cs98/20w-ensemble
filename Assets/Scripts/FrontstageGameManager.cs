@@ -89,7 +89,7 @@ public class FrontstageGameManager : MonoBehaviour
         } else if(String.Compare(statVar.GetFollowing(), "follow") == 0)
         {
           meterButton.SetActive(false);
-          //server.SetActive(true);
+          server.SetActive(true);
         }
     }
     void Update()

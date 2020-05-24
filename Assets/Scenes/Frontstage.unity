@@ -2674,7 +2674,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instrument: {fileID: 89387544}
   mixer: {fileID: 24100000, guid: 14cc13521120a46f9b066ee39ff8f3b9, type: 2}
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: 0da60464aaf714662ae0dfc38459eb2a, type: 3}
+  - {fileID: 8300000, guid: 7c8f0057ca55c4545bb2f1646cee3f53, type: 3}
+  - {fileID: 8300000, guid: a5d5d155071324320a35a9aee485982e, type: 3}
   pitch: PitchOffset
 --- !u!1001 &89845296
 PrefabInstance:
@@ -11123,7 +11126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd92e189c8ac4f50b1e47b56d7b3bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AP: {fileID: 0}
+  AP: {fileID: 768655129}
 --- !u!4 &250656480
 Transform:
   m_ObjectHideFlags: 0
@@ -29545,10 +29548,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteplayers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2019741427}
+  - {fileID: 1531054513}
+  - {fileID: 1062409605}
+  - {fileID: 89387545}
 --- !u!114 &768655130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42457,7 +42460,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instrument: {fileID: 1062409604}
   mixer: {fileID: 24100000, guid: e6cd3906bbd744616a5eeaa5cd141c09, type: 2}
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: 7e78229683f6d4d879e43bd799cb9c38, type: 3}
+  - {fileID: 8300000, guid: b3264cdb3e78c4de9b86dd3f16966e1e, type: 3}
+  - {fileID: 8300000, guid: f8210b90b9803425abdc597dd2ebdcc3, type: 3}
+  - {fileID: 8300000, guid: b1e931279087747b8aed344ce852b288, type: 3}
+  - {fileID: 8300000, guid: 5ebbcd503a2134e1daeaa3a90d8b28fa, type: 3}
   pitch: PitchOffset
 --- !u!1001 &1062703451
 PrefabInstance:
@@ -58564,7 +58572,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instrument: {fileID: 1531054512}
   mixer: {fileID: 24100000, guid: 00764ad1a9e6b497f990204630adc317, type: 2}
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: 701375b58154340c6a2828610600fc96, type: 3}
+  - {fileID: 8300000, guid: b3264cdb3e78c4de9b86dd3f16966e1e, type: 3}
+  - {fileID: 8300000, guid: e4fec9077bacd497f9c14d5e09f43261, type: 3}
+  - {fileID: 8300000, guid: ae9fd4ffb45884e27a6c4a4d8b0aa7e3, type: 3}
+  - {fileID: 8300000, guid: 81ed84bb6b1424faf8eae9e956179ace, type: 3}
   pitch: PitchOffset
 --- !u!1001 &1533945413
 PrefabInstance:
@@ -81516,7 +81529,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instrument: {fileID: 2019741426}
   mixer: {fileID: 24100000, guid: d69af3a3b00974d40b6300f6f6c3e230, type: 2}
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: 394924a91f91a49cf80ae44991988c10, type: 3}
+  - {fileID: 8300000, guid: 3ce2c404e3c08408a8b2525c1d99abf8, type: 3}
+  - {fileID: 8300000, guid: 20c49262c7fb94c8a948d260bfba8706, type: 3}
+  - {fileID: 8300000, guid: a91a8ff20c3414e70b43eb6b4257360b, type: 3}
+  - {fileID: 8300000, guid: 54c7a2ac4b7264bb9a5ff97ff9cee744, type: 3}
   pitch: PitchOffset
 --- !u!1 &2020725131
 GameObject:

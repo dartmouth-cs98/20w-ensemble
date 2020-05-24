@@ -12,13 +12,13 @@ public class AccompanimentTest : MonoBehaviour
     // Start is called before the first frame update
     public void TestViolinPlayback()
     {
-      AP.PlayNote(vioMidi, "violin");
+      AP.PlayNote(vioMidi, 0);
       vioMidi = vioMidi + 10;
 
     }
     public void TestCelloPlayback()
     {
-      AP.PlayNote(celloMidi, "cello");
+      AP.PlayNote(celloMidi, 1);
       celloMidi = celloMidi + 10;
     }
 
