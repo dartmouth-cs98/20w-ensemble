@@ -9,17 +9,16 @@ public class WebSocketComm : MonoBehaviour
     //GameManager gm;
     private WebSocket webSocket;
     public AccompanimentPlayer AP;
-    //private bool processing = false;
-    //{"type": "accompaniment", "data": {"0": [-1], "1": [-1], "2": [-1], "3": [62]}}
+
     [System.Serializable]
-    public class PlayerInfo
+    public class AccompData
     {
         public string type;
         public Accompaniment data;
 
-        public static PlayerInfo CreateFromJSON(string jsonString)
+        public static AccompData CreateFromJSON(string jsonString)
         {
-            return JsonUtility.FromJson<PlayerInfo>(jsonString);
+            return JsonUtility.FromJson<AccompData>(jsonString);
         }
     }
     [System.Serializable]
@@ -30,24 +29,80 @@ public class WebSocketComm : MonoBehaviour
       public string inst2;
       public string inst3;
     }
+/*
+    public class SongMessage
+    {
+      public string type;
+      public SongName data;
+      public string FormatJson()
+      {
+        return JsonUtility.ToJson(this);
+      }
+      public StartMessage(string type, SongName data)
+      {
+        this.type = type;
+        this.data = data;
+      }
+    }
+    public class SongName
+    {
+      public string song_name;
+      public SongName(string song_name)
+      {
+        this.song_name = song_name;
+      }
+    }
 
+    public class StartMessage
+    {
+      public string type;
+      public StartWord data;
+      public StartMessage(string type, StartWord data)
+      {
+        this.type = type;
+        this.data = data;
+      }
+      public string FormatJson()
+      {
+        return JsonUtility.ToJson(this);
+      }
+    }
+    public class StartWord
+    {
+      public string msg;
+      public StartWord(string msg)
+      {
+        this.msg = msg;
+      }
+    }
+*/
     private Queue<string> msgQueue = new Queue<string>();
 
     public void Start()
     {
         //gm = UnityEngine.Object.FindObjectOfType<GameManager>();
         StartCoroutine(ConnectToWebSocket());
+        //SongSelection();
     }
 
     public void Update(){
-      if(msgQueue.Count == 1){
+      if(msgQueue.Count > 0){
         HandleMessage(msgQueue.Dequeue());
       }
     }
-
+/*
     public void StartFollowing(){
-      StartCoroutine(SendHello("Start"));
+      StartWord word = new StartWord("Start");
+      StartMessage msg = new StartMessage("start_message", word);
+      StartCoroutine(SendHello(msg.FormatJson()));
     }
+
+    public void SongSelection(){
+      SongName name = new SongName(gm.GetSongName());
+      SongMessage msg = new SongMessage("song_selection", name);
+      StartCoroutine(SendHello(msg.FormatJson()));
+    }
+*/
 
     private IEnumerator SendHello(string msg){
         webSocket.Send(msg);
@@ -61,7 +116,6 @@ public class WebSocketComm : MonoBehaviour
 
         webSocket.Connect();
 
-        //webSocket.Send(gm.GetSongName());
         webSocket.Send("hello from unity");
         yield return new WaitForSeconds(0.05f);
     }
@@ -75,7 +129,7 @@ public class WebSocketComm : MonoBehaviour
     {
         if(String.Compare(msg.Substring(0,1), "{") == 0)
         {
-          if(msgQueue.Count == 0)
+          if(msgQueue.Count < 3)
           {
             msgQueue.Enqueue(msg);
             Debug.Log("enqueue msg");
@@ -86,10 +140,10 @@ public class WebSocketComm : MonoBehaviour
     private void HandleMessage(string msg)
     {
       Debug.Log("Handle msg");
-      PlayerInfo playInfo = PlayerInfo.CreateFromJSON(msg);
-      Debug.Log(playInfo.data.inst3);
+      AccompData accompData = AccompData.CreateFromJSON(msg);
+      Debug.Log(accompData.data.inst3);
       int midi3 = 0;
-      if(Int32.TryParse(playInfo.data.inst3, out midi3)){
+      if(Int32.TryParse(accompData.data.inst3, out midi3)){
         Debug.Log(midi3);
         if(midi3 < 0)
         {
@@ -101,7 +155,7 @@ public class WebSocketComm : MonoBehaviour
         }
       }
       int midi0 = 0;
-      if(Int32.TryParse(playInfo.data.inst0, out midi0)){
+      if(Int32.TryParse(accompData.data.inst0, out midi0)){
         if(midi0 < 0)
         {
           AP.StopNote(0);
@@ -113,7 +167,7 @@ public class WebSocketComm : MonoBehaviour
         }
       }
       int midi1 = 0;
-      if(Int32.TryParse(playInfo.data.inst1, out midi1)){
+      if(Int32.TryParse(accompData.data.inst1, out midi1)){
         if(midi1 < 0)
         {
           AP.StopNote(1);
@@ -125,7 +179,7 @@ public class WebSocketComm : MonoBehaviour
         }
       }
       int midi2 = 0;
-      if(Int32.TryParse(playInfo.data.inst2, out midi2)){
+      if(Int32.TryParse(accompData.data.inst2, out midi2)){
         if(midi2 < 0)
         {
         //Debug.Log("stopping2");
