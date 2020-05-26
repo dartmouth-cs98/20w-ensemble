@@ -6,21 +6,29 @@ using UnityEngine.Audio;
 public class AccompanimentPlayer : MonoBehaviour
 {
     public NotePlayer[] noteplayers;
+    //private bool processing = false;
 
-    private Dictionary<string, int> instrumentMap = new Dictionary<string, int>()
+    /*private Dictionary<string, int> instrumentMap = new Dictionary<string, int>()
     {
       {"violin", 0},
       {"cello", 1},
       {"viola", 2},
       {"bass", 3}
-    };
+    };*/
 
-    public void PlayNote(int midi, string instrument)
+    public void PlayNote(int midi, int instrument)
     {
-      noteplayers[instrumentMap[instrument]].NoteOn(midi);
+    //  if(!processing){
+      //  processing = true;
+        Debug.Log("playing");
+        noteplayers[instrument].NoteOn(midi);
+    //  }
     }
-    public void StopNote(string instrument)
+    public void StopNote(int instrument)
     {
-      noteplayers[instrumentMap[instrument]].NoteOff();
+      //if(!processing){
+        //Debug.Log("stopping");
+        noteplayers[instrument].NoteOff();
+    //  }
     }
 }
