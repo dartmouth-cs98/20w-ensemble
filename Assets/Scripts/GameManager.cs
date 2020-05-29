@@ -19,7 +19,8 @@ public class GameManager : MonoBehaviour {
 	//position for teleportation
 	public Vector3 currPosition = new Vector3(0,0,0);
 
-
+	//server stuff
+	public string ip = "";
 
 	//settings
 	public int numAudience = 0;
@@ -120,6 +121,14 @@ public class GameManager : MonoBehaviour {
 	public string GetSongName()
 	{
 		return songMap[songID];
+	}
+	public void ChangeIP(string ipString)
+	{
+		ip = ipString;
+	}
+	public string GetIP()
+	{
+		return ip;
 	}
 
 	//persistence

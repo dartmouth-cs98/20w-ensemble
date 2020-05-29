@@ -14,6 +14,7 @@ public class SettingsButtonManager : MonoBehaviour
     public GameObject small;
     public GameObject large;
     public GameObject frontStageButton;
+    public GameObject keypad;
 
     void Start()
     {
@@ -22,9 +23,11 @@ public class SettingsButtonManager : MonoBehaviour
       {
         follow.SetActive(true);
         none.SetActive(false);
+        keypad.SetActive(true);
       } else if(String.Compare(statVar.GetFollowing(), "static") == 0)
       {
         follow.SetActive(false);
+        keypad.SetActive(false);
         none.SetActive(true);
       }
       if(String.Compare(statVar.GetStage(), "large") == 0)
@@ -47,9 +50,11 @@ public class SettingsButtonManager : MonoBehaviour
       {
         follow.SetActive(true);
         none.SetActive(false);
+        keypad.SetActive(true);
       } else if(String.Compare(statVar.GetFollowing(), "static") == 0)
       {
         follow.SetActive(false);
+        keypad.SetActive(false);
         none.SetActive(true);
       }
       if(String.Compare(statVar.GetStage(), "large") == 0)

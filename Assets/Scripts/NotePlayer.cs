@@ -10,6 +10,7 @@ public class NotePlayer : MonoBehaviour
     public AudioMixer mixer;
     public AudioClip[] clips;
     //private bool processing = false;
+    private int previousMidi = -2;
     public string pitch = "PitchOffset";
 
     private Dictionary<int, float> midiToFrequency = new Dictionary<int, float>()
@@ -147,7 +148,7 @@ public class NotePlayer : MonoBehaviour
 // need to format sound files to be instrument followed by three digit midi
     public void NoteOn(int midi)
     {
-    //  if(!processing){
+      if(!instrument.isPlaying || (midi != previousMidi && instrument.isPlaying)){
         Debug.Log("playingnote");
         //processing = true;
         float ratio = 1f;
@@ -161,7 +162,7 @@ public class NotePlayer : MonoBehaviour
         }
         mixer.SetFloat(pitch, ratio);
         instrument.Play();
-    //  }
+      }
     }
 
     private AudioClip FindCloseRoot(int midi)
@@ -173,13 +174,13 @@ public class NotePlayer : MonoBehaviour
         int rootVal = 0;
         if(Int32.TryParse(rootValue, out rootVal))
         {
-          if(midi > rootVal)
+          if(midi >= rootVal)
           {
             closeClip = clip;
           }
         }
       }
-
+      previousMidi = midi;
       return closeClip;
     }
 
@@ -189,5 +190,6 @@ public class NotePlayer : MonoBehaviour
       if(instrument.isPlaying){
         instrument.Stop();
       }
+      previousMidi = -1;
     }
 }
