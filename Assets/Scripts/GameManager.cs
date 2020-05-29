@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour {
 	public Vector3 currPosition = new Vector3(0,0,0);
 
 	//server stuff
-	public string ip;
+	public string ip = "";
 
 	//settings
 	public int numAudience = 0;
