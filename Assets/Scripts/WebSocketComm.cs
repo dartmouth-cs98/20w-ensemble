@@ -6,7 +6,7 @@ using System;
 
 public class WebSocketComm : MonoBehaviour
 {
-    //GameManager gm;
+    GameManager gm;
     private WebSocket webSocket;
     public AccompanimentPlayer AP;
 
@@ -29,21 +29,23 @@ public class WebSocketComm : MonoBehaviour
       public string inst2;
       public string inst3;
     }
-/*
+
+    [System.Serializable]
     public class SongMessage
     {
       public string type;
       public SongName data;
-      public string FormatJson()
-      {
-        return JsonUtility.ToJson(this);
-      }
-      public StartMessage(string type, SongName data)
+      public SongMessage(string type, SongName data)
       {
         this.type = type;
         this.data = data;
       }
+      public string FormatJson()
+      {
+        return JsonUtility.ToJson(this);
+      }
     }
+    [System.Serializable]
     public class SongName
     {
       public string song_name;
@@ -52,6 +54,7 @@ public class WebSocketComm : MonoBehaviour
         this.song_name = song_name;
       }
     }
+    [System.Serializable]
     public class StartMessage
     {
       public string type;
@@ -66,6 +69,7 @@ public class WebSocketComm : MonoBehaviour
         return JsonUtility.ToJson(this);
       }
     }
+    [System.Serializable]
     public class StartWord
     {
       public string msg;
@@ -74,14 +78,14 @@ public class WebSocketComm : MonoBehaviour
         this.msg = msg;
       }
     }
-*/
+
     private Queue<string> msgQueue = new Queue<string>();
 
     public void Start()
     {
-        //gm = UnityEngine.Object.FindObjectOfType<GameManager>();
-        StartCoroutine(ConnectToWebSocket());
-        //SongSelection();
+        gm = UnityEngine.Object.FindObjectOfType<GameManager>();
+        StartCoroutine(ConnectToWebSocket(gm.GetIP()));
+        SongSelection();
     }
 
     public void Update(){
@@ -89,7 +93,7 @@ public class WebSocketComm : MonoBehaviour
         HandleMessage(msgQueue.Dequeue());
       }
     }
-/*
+
     public void StartFollowing(){
       StartWord word = new StartWord("Start");
       StartMessage msg = new StartMessage("start_message", word);
@@ -100,16 +104,17 @@ public class WebSocketComm : MonoBehaviour
       SongMessage msg = new SongMessage("song_selection", name);
       StartCoroutine(SendHello(msg.FormatJson()));
     }
-*/
+
 
     private IEnumerator SendHello(string msg){
         webSocket.Send(msg);
         yield return new WaitForSeconds(0.05f);
     }
 
-    private IEnumerator ConnectToWebSocket()
+    private IEnumerator ConnectToWebSocket(string ip)
     {
-        webSocket = new WebSocket("ws://10.0.1.68:4000");
+        string address = "ws://" + ip + ":4000";
+        webSocket = new WebSocket(address);
         webSocket.OnMessage += (sender, e) => InterpretMessage(e.Data);
 
         webSocket.Connect();
@@ -125,9 +130,9 @@ public class WebSocketComm : MonoBehaviour
 
     private void InterpretMessage(string msg)
     {
-        if(String.Compare(msg.Substring(0,1), "{") == 0)
+        if(msg.Contains("ccompaniment"))
         {
-          if(msgQueue.Count < 3)
+          if(msgQueue.Count < 1)
           {
             msgQueue.Enqueue(msg);
             Debug.Log("enqueue msg");

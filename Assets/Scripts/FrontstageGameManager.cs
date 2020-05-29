@@ -64,6 +64,9 @@ public class FrontstageGameManager : MonoBehaviour
         }
         if(String.Compare(statVar.GetFollowing(), "static") == 0)
         {
+          followingButton.SetActive(false);
+          server.SetActive(false);
+          playButton.SetActive(true);
           if(String.Compare(songMap[statVar.GetSong()], "canonInD") == 0)
           {
             ChangeInstrument("canonInD");

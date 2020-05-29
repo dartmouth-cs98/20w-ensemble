@@ -5806,7 +5806,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847446097}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.44528627, y: -0.88654685, z: 0.65402925}
+  m_LocalPosition: {x: -0.44528627, y: -0.88654685, z: 1.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1543077414}
@@ -6328,6 +6328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   songID: 0
   currPosition: {x: 0, y: 0, z: 0}
+  ip: 
   numAudience: 0
   numOrchestra: 0
   followingType: static
