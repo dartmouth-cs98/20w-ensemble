@@ -55250,6 +55250,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0da60464aaf714662ae0dfc38459eb2a, type: 3}
   - {fileID: 8300000, guid: 7c8f0057ca55c4545bb2f1646cee3f53, type: 3}
   - {fileID: 8300000, guid: a5d5d155071324320a35a9aee485982e, type: 3}
+  - {fileID: 8300000, guid: b1e931279087747b8aed344ce852b288, type: 3}
+  - {fileID: 8300000, guid: 5ebbcd503a2134e1daeaa3a90d8b28fa, type: 3}
   pitch: PitchOffset
 --- !u!1001 &1062703451
 PrefabInstance:
