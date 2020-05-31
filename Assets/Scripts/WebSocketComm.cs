@@ -49,9 +49,11 @@ public class WebSocketComm : MonoBehaviour
     public class SongName
     {
       public string song_name;
-      public SongName(string song_name)
+      public int tempo;
+      public SongName(string song_name, int tempo)
       {
         this.song_name = song_name;
+        this.tempo = tempo;
       }
     }
     [System.Serializable]
@@ -100,7 +102,7 @@ public class WebSocketComm : MonoBehaviour
       StartCoroutine(SendHello(msg.FormatJson()));
     }
     public void SongSelection(){
-      SongName name = new SongName(gm.GetSongName());
+      SongName name = new SongName(gm.GetSongName(), gm.GetTempo());
       SongMessage msg = new SongMessage("song_selection", name);
       StartCoroutine(SendHello(msg.FormatJson()));
     }
