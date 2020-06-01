@@ -14,6 +14,9 @@ public class SettingsButtonManager : MonoBehaviour
     public GameObject small;
     public GameObject large;
     public GameObject frontStageButton;
+    public GameObject keypad;
+    public GameObject followingTempo;
+    public TMP_Text initialTempo;
 
     void Start()
     {
@@ -22,9 +25,13 @@ public class SettingsButtonManager : MonoBehaviour
       {
         follow.SetActive(true);
         none.SetActive(false);
+        keypad.SetActive(true);
+        followingTempo.SetActive(true);
       } else if(String.Compare(statVar.GetFollowing(), "static") == 0)
       {
         follow.SetActive(false);
+        keypad.SetActive(false);
+        followingTempo.SetActive(false);
         none.SetActive(true);
       }
       if(String.Compare(statVar.GetStage(), "large") == 0)
@@ -47,9 +54,14 @@ public class SettingsButtonManager : MonoBehaviour
       {
         follow.SetActive(true);
         none.SetActive(false);
+        keypad.SetActive(true);
+        followingTempo.SetActive(true);
+        initialTempo.text = statVar.GetTempo().ToString();
       } else if(String.Compare(statVar.GetFollowing(), "static") == 0)
       {
         follow.SetActive(false);
+        keypad.SetActive(false);
+        followingTempo.SetActive(false);
         none.SetActive(true);
       }
       if(String.Compare(statVar.GetStage(), "large") == 0)
@@ -97,5 +109,13 @@ public class SettingsButtonManager : MonoBehaviour
     public void ToggleFront()
     {
       statVar.FrontStageToggle();
+    }
+    public void TempoUp()
+    {
+      statVar.TempoUp();
+    }
+    public void TempoDown()
+    {
+      statVar.TempoDown();
     }
 }

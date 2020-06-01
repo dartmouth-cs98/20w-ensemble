@@ -8,7 +8,8 @@ public class NotePlayer : MonoBehaviour
 {
     public AudioSource instrument;
     public AudioMixer mixer;
-    public AudioClip[] clips;
+    public AudioClip[] clips = new AudioClip[5];
+    private int previousMidi = -2;
     public string pitch = "PitchOffset";
 
     private Dictionary<int, float> midiToFrequency = new Dictionary<int, float>()
@@ -142,44 +143,127 @@ public class NotePlayer : MonoBehaviour
       {127, 12543.85f},
       {128, 13289.75f}
     };
+    // store values in hash to cut down on time to play notes
+    private Dictionary<int, int> clipMap = new Dictionary<int, int>()
+    {
+      {36, 0},
+      {37, 0},
+      {38, 0},
+      {39, 0},
+      {40, 0},
+      {41, 0},
+      {42, 0},
+      {43, 0},
+      {44, 0},
+      {45, 0},
+      {46, 0},
+      {47, 0},
+      {48, 1},
+      {49, 1},
+      {50, 1},
+      {51, 1},
+      {52, 1},
+      {53, 1},
+      {54, 1},
+      {55, 1},
+      {56, 1},
+      {57, 1},
+      {58, 1},
+      {59, 1},
+      {60, 2},
+      {61, 2},
+      {62, 2},
+      {63, 2},
+      {64, 2},
+      {65, 2},
+      {66, 2},
+      {67, 2},
+      {68, 2},
+      {69, 2},
+      {70, 2},
+      {71, 2},
+      {72, 3},
+      {73, 3},
+      {74, 3},
+      {75, 3},
+      {76, 3},
+      {77, 3},
+      {78, 3},
+      {79, 3},
+      {80, 3},
+      {81, 3},
+      {82, 3},
+      {83, 3},
+      {84, 4},
+      {85, 4},
+      {86, 4},
+      {87, 4},
+      {88, 4},
+      {89, 4},
+      {90, 4},
+      {91, 4},
+      {92, 4},
+      {93, 4},
+      {94, 4},
+      {95, 4}
+    };
 
-// need to format sound files to be instrument followed by three digit midi
     public void NoteOn(int midi)
     {
-      float ratio = 1f;
-      instrument.clip = FindCloseRoot(midi);
-      string name = instrument.clip.name;
-      string rootValue = name.Substring(name.Length - 3);
-      int rootVal = 0;
-      if(Int32.TryParse(rootValue, out rootVal))
-      {
-        ratio = midiToFrequency[midi]/midiToFrequency[rootVal];
+      if(!instrument.isPlaying || (midi != previousMidi && instrument.isPlaying)){
+        Debug.Log("playingnote");
+        //processing = true;
+        float ratio = 1f;
+        instrument.clip = FindCloseRoot(midi);
+        string name = instrument.clip.name;
+        string rootValue = name.Substring(name.Length - 3);
+        int rootVal = 0;
+        if(Int32.TryParse(rootValue, out rootVal))
+        {
+          ratio = midiToFrequency[midi]/midiToFrequency[rootVal];
+        }
+        mixer.SetFloat(pitch, ratio);
+        instrument.Play();
       }
-      mixer.SetFloat(pitch, ratio);
-      instrument.Play();
     }
 
     private AudioClip FindCloseRoot(int midi)
     {
-      AudioClip closeClip = clips[0];
+      // original approach for scalability: too costly per frame
+      /*AudioClip closeClip = clips[0];
       foreach(AudioClip clip in clips)
       {
         string rootValue = clip.name.Substring(clip.name.Length - 3);
         int rootVal = 0;
         if(Int32.TryParse(rootValue, out rootVal))
         {
-          if(midi > rootVal)
+          if(midi >= rootVal)
           {
             closeClip = clip;
           }
         }
       }
-
-      return closeClip;
+      previousMidi = midi;
+      return closeClip;*/
+      previousMidi = midi;
+      string rootValue = clips[0].name.Substring(clips[0].name.Length - 3);
+      int rootVal = 0;
+      if(Int32.TryParse(rootValue, out rootVal))
+      {
+        if(rootVal == 55)
+        {
+          return clips[clipMap[midi - 19]];
+        }
+        return clips[clipMap[midi]];
+      } else return null;
     }
 
     public void NoteOff()
     {
-      instrument.Stop();
+    //  processing = false;
+      if(instrument.isPlaying){
+        instrument.Stop();
+      }
+      previousMidi = -1;
     }
 }

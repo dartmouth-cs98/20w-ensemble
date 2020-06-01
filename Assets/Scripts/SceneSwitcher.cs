@@ -40,6 +40,6 @@ public class SceneSwitcher : MonoBehaviour
 
     public void restartTutorial()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Tutorial");
     }
 }

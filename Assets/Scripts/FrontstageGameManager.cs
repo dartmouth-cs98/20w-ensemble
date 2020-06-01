@@ -28,7 +28,9 @@ public class FrontstageGameManager : MonoBehaviour
     public GameObject playButton;
     public GameObject pause;
     public GameObject unpause;
+    public GameObject endButton;
     bool pressed = false;
+    public GameObject followingButton;
 
     private Dictionary<string, int> songIndex = new Dictionary<string, int>()
     {
@@ -62,6 +64,9 @@ public class FrontstageGameManager : MonoBehaviour
         }
         if(String.Compare(statVar.GetFollowing(), "static") == 0)
         {
+          followingButton.SetActive(false);
+          server.SetActive(false);
+          playButton.SetActive(true);
           if(String.Compare(songMap[statVar.GetSong()], "canonInD") == 0)
           {
             ChangeInstrument("canonInD");
@@ -88,7 +93,9 @@ public class FrontstageGameManager : MonoBehaviour
         } else if(String.Compare(statVar.GetFollowing(), "follow") == 0)
         {
           meterButton.SetActive(false);
-          //server.SetActive(true);
+          followingButton.SetActive(true);
+          server.SetActive(true);
+          playButton.SetActive(false);
         }
     }
     void Update()
@@ -135,6 +142,7 @@ public class FrontstageGameManager : MonoBehaviour
         pressed = true;
         pause.SetActive(true);
         unpause.SetActive(true);
+        endButton.SetActive(true);
       }
     }
 }
