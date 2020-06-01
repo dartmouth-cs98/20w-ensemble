@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 	//what song to play
 	static int MAX_SONGS = 2;
 	public int songID = 0;
+	public int tempo = 60;
 
 	private Dictionary<int, string> songMap = new Dictionary<int, string>()
 	{
@@ -129,6 +130,18 @@ public class GameManager : MonoBehaviour {
 	public string GetIP()
 	{
 		return ip;
+	}
+	public void TempoUp()
+	{
+		tempo += 1;
+	}
+	public void TempoDown()
+	{
+		tempo -= 1;
+	}
+	public int GetTempo()
+	{
+		return tempo;
 	}
 
 	//persistence
