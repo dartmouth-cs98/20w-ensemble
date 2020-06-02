@@ -30,12 +30,12 @@ public class SceneSwitcher : MonoBehaviour
 
     public void toStartScreen()
     {
-      SceneManager.LoadScene("StartScreen");
+        SceneManager.LoadScene("StartScreen");
     }
 
     public void toBackStage()
     {
-      SceneManager.LoadScene("Backstage1");
+        SceneManager.LoadScene("Backstage");
     }
 
     public void restartTutorial()
