@@ -4024,7 +4024,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997509135}
   m_LocalRotation: {x: -0, y: 0.98835194, z: -0, w: 0.15218581}
-  m_LocalPosition: {x: -0.9864197, y: 0.88654685, z: 5.313223}
+  m_LocalPosition: {x: -0.9864197, y: 0.88654685, z: 1.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1548265665}
@@ -6601,7 +6601,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.109, y: 0.001}
+  m_AnchoredPosition: {x: -0.09, y: -0.02}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1845707320
@@ -6622,7 +6622,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ensemble3D
+  m_text: EnsembleVR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7388,6 +7388,7 @@ MonoBehaviour:
   numOrchestra: 0
   followingType: static
   stageSize: small
+  audienceSize: small
   fromFrontStage: 0
 --- !u!4 &1896148819
 Transform:

@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour {
 	public int numOrchestra = 0;
 	public string followingType = "static";
 	public string stageSize = "small";
+	public string audienceSize = "small";
 	public bool fromFrontStage = false;
 
 	public void FrontStageToggle()
@@ -83,17 +84,21 @@ public class GameManager : MonoBehaviour {
 	{
 		stageSize = "large";
 	}
+	public void SmallAudience()
+	{
+		audienceSize = "small";
+	}
+	public void LargeAudience()
+	{
+		audienceSize = "large";
+	}
 	public string GetFollowing()
 	{
 		return followingType;
 	}
-	public int GetAudience()
+	public string GetAudience()
 	{
-		return numAudience;
-	}
-	public int GetOrchestra()
-	{
-		return numOrchestra;
+		return audienceSize;
 	}
 	public string GetStage()
 	{

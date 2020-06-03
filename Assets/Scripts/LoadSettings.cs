@@ -9,6 +9,7 @@ public class LoadSettings : MonoBehaviour
     GameManager statVar;
     public GameObject startObjs;
     public GameObject backButton;
+    bool loadSettings = false;
 
     void Start()
     {
@@ -21,7 +22,11 @@ public class LoadSettings : MonoBehaviour
     }
     public void AddSettings()
     {
-      SceneManager.LoadScene("Settings", LoadSceneMode.Additive);
+      if(loadSettings)
+      {
+        SceneManager.LoadScene("Settings", LoadSceneMode.Additive);
+        loadSettings = !loadSettings;
+      }
     }
     public void HideStartScreen()
     {
@@ -33,6 +38,7 @@ public class LoadSettings : MonoBehaviour
     }
     public void UnloadSettings()
     {
+      loadSettings = !loadSettings;
       StartCoroutine("UnloadSet");
     }
     public void RevealBackButton()

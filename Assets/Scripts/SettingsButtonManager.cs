@@ -7,8 +7,6 @@ using TMPro;
 public class SettingsButtonManager : MonoBehaviour
 {
     GameManager statVar;
-    public TMP_Text numAudience;
-    public TMP_Text numOrchestra;
     public GameObject follow;
     public GameObject none;
     public GameObject small;
@@ -16,6 +14,8 @@ public class SettingsButtonManager : MonoBehaviour
     public GameObject frontStageButton;
     public GameObject keypad;
     public GameObject followingTempo;
+    public GameObject smallAudience;
+    public GameObject largeAudience;
     public TMP_Text initialTempo;
 
     void Start()
@@ -43,13 +43,19 @@ public class SettingsButtonManager : MonoBehaviour
         large.SetActive(false);
         small.SetActive(true);
       }
+      if(String.Compare(statVar.GetAudience(), "large") == 0)
+      {
+        largeAudience.SetActive(true);
+        smallAudience.SetActive(false);
+      } else if(String.Compare(statVar.GetAudience(), "small") == 0)
+      {
+        largeAudience.SetActive(false);
+        smallAudience.SetActive(true);
+      }
       frontStageButton.SetActive(statVar.FromFrontStage());
     }
     void Update()
     {
-      numOrchestra.text = statVar.GetOrchestra().ToString();
-      numAudience.text = statVar.GetAudience().ToString();
-
       if(String.Compare(statVar.GetFollowing(), "follow") == 0)
       {
         follow.SetActive(true);
@@ -73,22 +79,15 @@ public class SettingsButtonManager : MonoBehaviour
         large.SetActive(false);
         small.SetActive(true);
       }
-    }
-    public void OrchestraUp()
-    {
-      statVar.OrchestraOptionUp();
-    }
-    public void OrchestraDown()
-    {
-      statVar.OrchestraOptionDown();
-    }
-    public void AudienceUp()
-    {
-      statVar.AudienceOptionUp();
-    }
-    public void AudienceDown()
-    {
-      statVar.AudienceOptionDown();
+      if(String.Compare(statVar.GetAudience(), "large") == 0)
+      {
+        largeAudience.SetActive(true);
+        smallAudience.SetActive(false);
+      } else if(String.Compare(statVar.GetAudience(), "small") == 0)
+      {
+        largeAudience.SetActive(false);
+        smallAudience.SetActive(true);
+      }
     }
     public void SelectScore()
     {
@@ -105,6 +104,14 @@ public class SettingsButtonManager : MonoBehaviour
     public void SelectLarge()
     {
       statVar.LargeStage();
+    }
+    public void AudienceSmall()
+    {
+      statVar.SmallAudience();
+    }
+    public void AudienceLarge()
+    {
+      statVar.LargeAudience();
     }
     public void ToggleFront()
     {
