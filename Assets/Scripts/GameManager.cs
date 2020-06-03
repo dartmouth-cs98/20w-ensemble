@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,15 +8,27 @@ public class GameManager : MonoBehaviour {
 	//what song to play
 	static int MAX_SONGS = 2;
 	public int songID = 0;
+	public int tempo = 60;
+
+	private Dictionary<int, string> songMap = new Dictionary<int, string>()
+	{
+		{0, "canonInD"},
+		{1, "letItGo"},
+		{2, "beethoven5"}
+	};
 
 	//position for teleportation
 	public Vector3 currPosition = new Vector3(0,0,0);
+
+	//server stuff
+	public string ip = "";
 
 	//settings
 	public int numAudience = 0;
 	public int numOrchestra = 0;
 	public string followingType = "static";
 	public string stageSize = "small";
+	public string audienceSize = "small";
 	public bool fromFrontStage = false;
 
 	public void FrontStageToggle()
@@ -72,17 +84,21 @@ public class GameManager : MonoBehaviour {
 	{
 		stageSize = "large";
 	}
+	public void SmallAudience()
+	{
+		audienceSize = "small";
+	}
+	public void LargeAudience()
+	{
+		audienceSize = "large";
+	}
 	public string GetFollowing()
 	{
 		return followingType;
 	}
-	public int GetAudience()
+	public string GetAudience()
 	{
-		return numAudience;
-	}
-	public int GetOrchestra()
-	{
-		return numOrchestra;
+		return audienceSize;
 	}
 	public string GetStage()
 	{
@@ -107,6 +123,30 @@ public class GameManager : MonoBehaviour {
 	public int GetSong()
 	{
 		return songID;
+	}
+	public string GetSongName()
+	{
+		return songMap[songID];
+	}
+	public void ChangeIP(string ipString)
+	{
+		ip = ipString;
+	}
+	public string GetIP()
+	{
+		return ip;
+	}
+	public void TempoUp()
+	{
+		tempo += 1;
+	}
+	public void TempoDown()
+	{
+		tempo -= 1;
+	}
+	public int GetTempo()
+	{
+		return tempo;
 	}
 
 	//persistence
