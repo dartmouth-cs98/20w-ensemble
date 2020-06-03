@@ -31,6 +31,7 @@ public class FrontstageGameManager : MonoBehaviour
     public GameObject endButton;
     bool pressed = false;
     public GameObject followingButton;
+    public GameObject moreAudience;
 
     private Dictionary<string, int> songIndex = new Dictionary<string, int>()
     {
@@ -61,6 +62,13 @@ public class FrontstageGameManager : MonoBehaviour
         } else if(String.Compare(statVar.GetStage(), "small") == 0)
         {
           sceneDivider.SetActive(true);
+        }
+        if(String.Compare(statVar.GetAudience(), "large") == 0)
+        {
+          moreAudience.SetActive(true);
+        } else if(String.Compare(statVar.GetAudience(), "small") == 0)
+        {
+          moreAudience.SetActive(false);
         }
         if(String.Compare(statVar.GetFollowing(), "static") == 0)
         {
