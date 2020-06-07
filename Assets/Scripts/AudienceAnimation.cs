@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class AudienceAnimation : MonoBehaviour
 {
-    public Animator anim;
-    public AudioSource audio;
+    Animator anim;
+    public int gender;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         int pickAnumber = Random.Range(1, 5);
+        // anim.SetInteger("sittingPose", pickAnumber);
         anim.SetInteger("sittingPose", pickAnumber);
+        anim.SetInteger("gender", gender);
         anim.SetBool("isSitting", true);
-        int pickAnumber2 = Random.Range(1, 7);
-        anim.SetInteger("clappingPose", pickAnumber2);
+        //int pickAnumber2 = Random.Range(10, 13);
+        //anim.SetInteger("clappingPose", pickAnumber2);
     }
 
     // Update is called once per frame
