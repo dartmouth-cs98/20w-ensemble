@@ -102,6 +102,11 @@ public class ConductorButton : MonoBehaviour
         }
 
         GameObject[] audiences = GameObject.FindGameObjectsWithTag("audience");
+        // GameObject audience = GameObject.Find("FrontAudience");
+        // foreach(Transform child in audience.transform) {
+        //     Animator anim = child.gameObject.GetComponent<Animator>();
+        //     anim.SetBool("isClapping", true);
+        // }
         foreach(GameObject mem in audiences) {
             Animator anim = mem.GetComponent<Animator>();
             anim.SetBool("isClapping", true);
