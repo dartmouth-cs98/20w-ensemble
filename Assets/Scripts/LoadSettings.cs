@@ -9,7 +9,7 @@ public class LoadSettings : MonoBehaviour
     GameManager statVar;
     public GameObject startObjs;
     public GameObject backButton;
-    bool loadSettings = false;
+    bool loadSettings = true;
 
     void Start()
     {
