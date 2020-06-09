@@ -28,7 +28,6 @@ public class FrontstageGameManager : MonoBehaviour
     public GameObject playButton;
     public GameObject pause;
     public GameObject unpause;
-    public GameObject endButton;
     bool pressed = false;
     public GameObject followingButton;
     public GameObject moreAudience;
@@ -150,7 +149,6 @@ public class FrontstageGameManager : MonoBehaviour
         pressed = true;
         pause.SetActive(true);
         unpause.SetActive(true);
-        endButton.SetActive(true);
       }
     }
 }
