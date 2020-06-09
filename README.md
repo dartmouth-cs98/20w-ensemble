@@ -34,6 +34,11 @@
 * Once you are flipped to the right piece, turn right and pinch on the door to go to the main stage.
 * Pinch on the green play button on the podium to start the music.
 * Practice to your heart's content!
+* The Beethoven 5th Symphony (last piece in the book) is a short 10 second snippet, so choose this for a quick demonstration!
+
+## Notes on Score-Following
+* In the Oculus game, you can change the accompaniment from static (doesn't follow you) to score-following. To use score-following, you must have the Python server running. Then, you must type in the IP address in the Oculus game itself. Currently, the score-following mode works, but the response is delayed by around 0.5 seconds, which makes for a really awkward experience.
+* Use the link to the score-following repo above and follow directions on it's README to set up the Python server.
 
 ## Authors
 
